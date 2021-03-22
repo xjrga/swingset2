@@ -6,6 +6,6 @@
     mvn package
     
     To run: 
-    cd product/SwingSet2-00
+    cd target
     java -jar SwingSet2-00.jar
     
