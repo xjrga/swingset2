@@ -6,7 +6,7 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
-public class Pink extends MetalTheme {
+public class Beige extends MetalTheme {
 
     private FontUIResource font;
     private ColorUIResource primary1;
@@ -15,24 +15,26 @@ public class Pink extends MetalTheme {
     private ColorUIResource secondary1;
     private ColorUIResource secondary2;
     private ColorUIResource secondary3;
-    private Color GREEN = new Color(0x5e840a);
-    private Color PINK = new Color(0xf9ddd9);
-    private Color LIGHTBLUE = new Color(0xb6dada);
-    private Color MEDIUMBLUE = new Color(0x65c4ca);
-    private Color DARKBLUE = new Color(0x2b7bb8);
+    public final Color A = new Color(0xac5c2c);
+    public final Color B = new Color(0xc8a353);
+    public final Color C = new Color(0x281924);
+    public final Color D = new Color(0x897846);
+    public final Color E = new Color(0x9ba068);
+    public final Color F = new Color(0xe0d5c1);
+    
 
     /*
-     * Pink Theme 
+     * Beige Theme 
      * @author Jorge R Garcia de Alba     
      */
-    public Pink() {
+    public Beige() {
         font = new FontUIResource("Dialog", Font.PLAIN, 13);        
-        secondary3 = new ColorUIResource(this.PINK);        
-        secondary2 = new ColorUIResource(this.PINK); 
-        primary1 = new ColorUIResource(this.GREEN);
-        secondary1 = new ColorUIResource(this.GREEN);        
-        primary3 = new ColorUIResource(this.MEDIUMBLUE);                       
-        primary2 = new ColorUIResource(this.LIGHTBLUE);
+        secondary3 = new ColorUIResource(this.F);
+        secondary2 = new ColorUIResource(this.F);
+        primary1 = new ColorUIResource(this.C);                
+        secondary1 = new ColorUIResource(this.C);        
+        primary2 = new ColorUIResource(this.B);
+        primary3 = new ColorUIResource(this.E);               
     }
 
     @Override
@@ -42,7 +44,7 @@ public class Pink extends MetalTheme {
 
     @Override
     public String getName() {
-        return "Pink";
+        return "Beige";
     }
 
     @Override

@@ -411,7 +411,9 @@ public class SwingSet2 extends JPanel {
         createThemesMenuItem(themesMenu, "ThemesMenu.pink_label", "ThemesMenu.pink_mnemonic",
                        "ThemesMenu.pink_accessible_description", new Pink());
         
-
+        createThemesMenuItem(themesMenu, "ThemesMenu.beige_label", "ThemesMenu.beige_mnemonic",
+                       "ThemesMenu.beige_accessible_description", new Beige());               
+        
         // Enable theme menu based on L&F
         themesMenu.setEnabled("Metal".equals(currentLookAndFeel.name));
 
