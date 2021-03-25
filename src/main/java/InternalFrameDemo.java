@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -53,39 +52,39 @@ import java.net.*;
  * @author Jeff Dinkins
  */
 public class InternalFrameDemo extends DemoModule {
+
     int windowCount = 0;
     JDesktopPane desktop = null;
 
     ImageIcon icon1, icon2, icon3, icon4;
     ImageIcon smIcon1, smIcon2, smIcon3, smIcon4;
 
-    public Integer FIRST_FRAME_LAYER  = new Integer(1);
-    public Integer DEMO_FRAME_LAYER   = new Integer(2);
-    public Integer PALETTE_LAYER     = new Integer(3);
+    public Integer FIRST_FRAME_LAYER = new Integer(1);
+    public Integer DEMO_FRAME_LAYER = new Integer(2);
+    public Integer PALETTE_LAYER = new Integer(3);
 
-    public int FRAME0_X        = 15;
-    public int FRAME0_Y        = 280;
+    public int FRAME0_X = 15;
+    public int FRAME0_Y = 280;
 
-    public int FRAME0_WIDTH    = 320;
-    public int FRAME0_HEIGHT   = 230;
+    public int FRAME0_WIDTH = 320;
+    public int FRAME0_HEIGHT = 230;
 
-    public int FRAME_WIDTH     = 225;
-    public int FRAME_HEIGHT    = 150;
+    public int FRAME_WIDTH = 225;
+    public int FRAME_HEIGHT = 150;
 
-    public int PALETTE_X      = 375;
-    public int PALETTE_Y      = 20;
+    public int PALETTE_X = 375;
+    public int PALETTE_Y = 20;
 
-    public int PALETTE_WIDTH  = 260;
+    public int PALETTE_WIDTH = 260;
     public int PALETTE_HEIGHT = 260;
 
-    JCheckBox windowResizable   = null;
-    JCheckBox windowClosable    = null;
+    JCheckBox windowResizable = null;
+    JCheckBox windowClosable = null;
     JCheckBox windowIconifiable = null;
     JCheckBox windowMaximizable = null;
 
     JTextField windowTitleField = null;
     JLabel windowTitleLabel = null;
-
 
     /**
      * main method allows us to run as a standalone demo.
@@ -104,13 +103,13 @@ public class InternalFrameDemo extends DemoModule {
         // preload all the icons we need for this demo
         icon1 = createImageIcon("misc/toast.gif", getString("InternalFrameDemo.toast"));
         icon2 = createImageIcon("misc/duke.gif", getString("InternalFrameDemo.duke"));
-        icon3 = createImageIcon("misc/duchess.gif",  getString("InternalFrameDemo.duchess"));
-        icon4 = createImageIcon("misc/cab.gif",  getString("InternalFrameDemo.cab"));
+        icon3 = createImageIcon("misc/duchess.gif", getString("InternalFrameDemo.duchess"));
+        icon4 = createImageIcon("misc/cab.gif", getString("InternalFrameDemo.cab"));
 
         smIcon1 = createImageIcon("misc/toast_small.gif", getString("InternalFrameDemo.toast"));
         smIcon2 = createImageIcon("misc/duke_small.gif", getString("InternalFrameDemo.duke"));
-        smIcon3 = createImageIcon("misc/duchess_small.gif",  getString("InternalFrameDemo.duchess"));
-        smIcon4 = createImageIcon("misc/cab_small.gif",  getString("InternalFrameDemo.cab"));
+        smIcon3 = createImageIcon("misc/duchess_small.gif", getString("InternalFrameDemo.duchess"));
+        smIcon4 = createImageIcon("misc/cab_small.gif", getString("InternalFrameDemo.cab"));
 
         // Create the desktop pane
         desktop = new JDesktopPane();
@@ -130,15 +129,13 @@ public class InternalFrameDemo extends DemoModule {
         createInternalFrame(icon2, DEMO_FRAME_LAYER, FRAME_WIDTH, FRAME_HEIGHT);
     }
 
-
-
     /**
      * Create an internal frame and add a scrollable imageicon to it
      */
     public JInternalFrame createInternalFrame(Icon icon, Integer layer, int width, int height) {
         JInternalFrame jif = new JInternalFrame();
 
-        if(!windowTitleField.getText().equals(getString("InternalFrameDemo.frame_label"))) {
+        if (!windowTitleField.getText().equals(getString("InternalFrameDemo.frame_label"))) {
             jif.setTitle(windowTitleField.getText() + "  ");
         } else {
             jif = new JInternalFrame(getString("InternalFrameDemo.frame_label") + " " + windowCount + "  ");
@@ -150,7 +147,7 @@ public class InternalFrameDemo extends DemoModule {
         jif.setIconifiable(windowIconifiable.isSelected());
         jif.setResizable(windowResizable.isSelected());
 
-        jif.setBounds(20*(windowCount%10), 20*(windowCount%10), width, height);
+        jif.setBounds(20 * (windowCount % 10), 20 * (windowCount % 10), width, height);
         jif.setContentPane(new ImageScroller(this, icon, 0, windowCount));
 
         windowCount++;
@@ -158,7 +155,6 @@ public class InternalFrameDemo extends DemoModule {
         desktop.add(jif, layer);
 
         // Set this internal frame to be selected
-
         try {
             jif.setSelected(true);
         } catch (java.beans.PropertyVetoException e2) {
@@ -171,7 +167,7 @@ public class InternalFrameDemo extends DemoModule {
 
     public JInternalFrame createInternalFramePalette() {
         JInternalFrame palette = new JInternalFrame(
-            getString("InternalFrameDemo.palette_label")
+                getString("InternalFrameDemo.palette_label")
         );
         palette.putClientProperty("JInternalFrame.isPalette", Boolean.TRUE);
         palette.getContentPane().setLayout(new BorderLayout());
@@ -224,16 +220,16 @@ public class InternalFrameDemo extends DemoModule {
         // * Create frame property checkboxes *
         // ************************************
         p = new JPanel() {
-            Insets insets = new Insets(10,15,10,5);
+            Insets insets = new Insets(10, 15, 10, 5);
+
             public Insets getInsets() {
                 return insets;
             }
         };
-        p.setLayout(new GridLayout(1,2));
-
+        p.setLayout(new GridLayout(1, 2));
 
         Box box = new Box(BoxLayout.Y_AXIS);
-        windowResizable   = new JCheckBox(getString("InternalFrameDemo.resizable_label"), true);
+        windowResizable = new JCheckBox(getString("InternalFrameDemo.resizable_label"), true);
         windowIconifiable = new JCheckBox(getString("InternalFrameDemo.iconifiable_label"), true);
 
         box.add(Box.createGlue());
@@ -243,7 +239,7 @@ public class InternalFrameDemo extends DemoModule {
         p.add(box);
 
         box = new Box(BoxLayout.Y_AXIS);
-        windowClosable    = new JCheckBox(getString("InternalFrameDemo.closable_label"), true);
+        windowClosable = new JCheckBox(getString("InternalFrameDemo.closable_label"), true);
         windowMaximizable = new JCheckBox(getString("InternalFrameDemo.maximizable_label"), true);
 
         box.add(Box.createGlue());
@@ -254,12 +250,12 @@ public class InternalFrameDemo extends DemoModule {
 
         palette.getContentPane().add(p, BorderLayout.CENTER);
 
-
         // ************************************
         // *   Create Frame title textfield   *
         // ************************************
         p = new JPanel() {
-            Insets insets = new Insets(0,0,10,0);
+            Insets insets = new Insets(0, 0, 10, 0);
+
             public Insets getInsets() {
                 return insets;
             }
@@ -282,11 +278,10 @@ public class InternalFrameDemo extends DemoModule {
         return palette;
     }
 
-
     class ShowFrameAction extends AbstractAction {
+
         InternalFrameDemo demo;
         Icon icon;
-
 
         public ShowFrameAction(InternalFrameDemo demo, Icon icon) {
             this.demo = demo;
@@ -295,9 +290,9 @@ public class InternalFrameDemo extends DemoModule {
 
         public void actionPerformed(ActionEvent e) {
             demo.createInternalFrame(icon,
-                                     getDemoFrameLayer(),
-                                     getFrameWidth(),
-                                     getFrameHeight()
+                    getDemoFrameLayer(),
+                    getFrameWidth(),
+                    getFrameHeight()
             );
         }
     }
@@ -320,7 +315,7 @@ public class InternalFrameDemo extends DemoModule {
             super();
             JPanel p = new JPanel();
             p.setBackground(Color.white);
-            p.setLayout(new BorderLayout() );
+            p.setLayout(new BorderLayout());
 
             p.add(new JLabel(icon), BorderLayout.CENTER);
 

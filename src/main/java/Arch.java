@@ -15,24 +15,24 @@ public class Arch extends MetalTheme {
     private ColorUIResource secondary1;
     private ColorUIResource secondary2;
     private ColorUIResource secondary3;
-    public final Color PINK = new Color(0xf8b1d3);    
+    public final Color PINK = new Color(0xf8b1d3);
     public final Color ORANGE = new Color(0xd74b28);
     public final Color PURPLE = new Color(0x83534f);
     public final Color WHITE = new Color(0xf0f1eb);
     public final Color BLUE = new Color(0x8894ac);
-   
+
     /*
      * Arch Theme 
      * @author Jorge R Garcia de Alba     
      */
     public Arch() {
-        font = new FontUIResource("Dialog", Font.PLAIN, 13);        
+        font = new FontUIResource("Dialog", Font.PLAIN, 13);
         secondary3 = new ColorUIResource(this.WHITE);
         secondary2 = new ColorUIResource(this.WHITE);
-        primary1 = new ColorUIResource(this.PURPLE);                
-        secondary1 = new ColorUIResource(this.PURPLE);        
+        primary1 = new ColorUIResource(this.PURPLE);
+        secondary1 = new ColorUIResource(this.PURPLE);
         primary2 = new ColorUIResource(this.PINK);
-        primary3 = new ColorUIResource(this.ORANGE);               
+        primary3 = new ColorUIResource(this.ORANGE);
     }
 
     @Override

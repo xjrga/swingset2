@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -50,8 +49,7 @@ import java.net.*;
 /**
  * JProgressBar Demo
  *
- * @author Jeff Dinkins
- # @author Peter Korn (accessibility support)
+ * @author Jeff Dinkins # @author Peter Korn (accessibility support)
  */
 public class ProgressBarDemo extends DemoModule {
 
@@ -150,40 +148,39 @@ public class ProgressBarDemo extends DemoModule {
         return b;
     }
 
-
     int textLocation = 0;
 
     String text = getString("ProgressBarDemo.text");
 
     public Action createTextLoadAction() {
         return new AbstractAction("text load action") {
-            public void actionPerformed (ActionEvent e) {
-                if(progressBar.getValue() < progressBar.getMaximum()) {
+            public void actionPerformed(ActionEvent e) {
+                if (progressBar.getValue() < progressBar.getMaximum()) {
                     progressBar.setValue(progressBar.getValue() + 1);
-                    progressTextArea.append(text.substring(textLocation, textLocation+1));
+                    progressTextArea.append(text.substring(textLocation, textLocation + 1));
                     textLocation++;
                 } else {
-                        timer.stop();
-                        loadAction.setEnabled(true);
-                        stopAction.setEnabled(false);
+                    timer.stop();
+                    loadAction.setEnabled(true);
+                    stopAction.setEnabled(false);
                 }
             }
         };
     }
 
-
     class MyTextArea extends JTextArea {
+
         public MyTextArea() {
             super(null, 0, 0);
             setEditable(false);
             setText("");
         }
 
-        public float getAlignmentX () {
+        public float getAlignmentX() {
             return LEFT_ALIGNMENT;
         }
 
-        public float getAlignmentY () {
+        public float getAlignmentY() {
             return TOP_ALIGNMENT;
         }
     }

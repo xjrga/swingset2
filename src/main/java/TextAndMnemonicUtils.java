@@ -38,21 +38,18 @@ import java.util.ResourceBundle;
 /**
  * <code>TextAndMnemonicUtils</code> allows to extract text and mnemonic values
  * from the unified text & mnemonic strings. For example:
- *   LafMenu.laf.labelAndMnemonic=&Look && Feel
- * The extracted text is "Look & Feel" and the extracted mnemonic mnemonic is "L".
+ * LafMenu.laf.labelAndMnemonic=&Look && Feel The extracted text is "Look &
+ * Feel" and the extracted mnemonic mnemonic is "L".
  *
  * There are several patterns for the text and mnemonic suffixes which are used
- * in the resource file. The patterns format is:
- * (resource key -> unified text & mnemonic resource key).
+ * in the resource file. The patterns format is: (resource key -> unified text &
+ * mnemonic resource key).
  *
- * Keys that have label suffixes:
- * (xxx_label -> xxx.labelAndMnemonic)
+ * Keys that have label suffixes: (xxx_label -> xxx.labelAndMnemonic)
  *
- * Keys that have mnemonic suffixes:
- * (xxx_mnemonic -> xxx.labelAndMnemonic)
+ * Keys that have mnemonic suffixes: (xxx_mnemonic -> xxx.labelAndMnemonic)
  *
- * Keys that do not have definite suffixes:
- * (xxx -> xxx.labelAndMnemonic)
+ * Keys that do not have definite suffixes: (xxx -> xxx.labelAndMnemonic)
  *
  * @author Alexander Scherbatiy
  */
@@ -72,7 +69,7 @@ public class TextAndMnemonicUtils {
         //ResourceBundle labels = ResourceBundle.getBundle("i18n.MyBundle", locale);
         //System.out.println(labels.getString("label1"));
 
-        bundle = ResourceBundle.getBundle("swingset",locale);
+        bundle = ResourceBundle.getBundle("swingset", locale);
         properties = new Properties();
         try {
             final InputStream resourceAsStream = TextAndMnemonicUtils.class.getResourceAsStream("swingset.properties");
@@ -86,15 +83,12 @@ public class TextAndMnemonicUtils {
      * Returns accessible and internationalized strings or mnemonics from the
      * resource bundle. The key is converted to the text & mnemonic key.
      *
-     * The following patterns are checked:
-     * Keys that have label suffixes:
+     * The following patterns are checked: Keys that have label suffixes:
      * (xxx_label -> xxx.labelAndMnemonic)
      *
-     * Keys that have mnemonic suffixes:
-     * (xxx_mnemonic -> xxx.labelAndMnemonic)
+     * Keys that have mnemonic suffixes: (xxx_mnemonic -> xxx.labelAndMnemonic)
      *
-     * Keys that do not have definite suffixes:
-     * (xxx -> xxx.labelAndMnemonic)
+     * Keys that do not have definite suffixes: (xxx -> xxx.labelAndMnemonic)
      *
      * Properties class is used to check if a key created for mnemonic exists.
      */
@@ -133,8 +127,8 @@ public class TextAndMnemonicUtils {
     /**
      * Convert the text & mnemonic string to text string
      *
-     * The '&' symbol is treated as the mnemonic pointer
-     * The double "&&" symbols are treated as the single '&'
+     * The '&' symbol is treated as the mnemonic pointer The double "&&" symbols
+     * are treated as the single '&'
      *
      * For example the string "&Look && Feel" is converted to "Look & Feel"
      */
@@ -169,8 +163,8 @@ public class TextAndMnemonicUtils {
     /**
      * Convert the text & mnemonic string to mnemonic
      *
-     * The '&' symbol is treated the mnemonic pointer
-     * The double "&&" symbols are treated as the single '&'
+     * The '&' symbol is treated the mnemonic pointer The double "&&" symbols
+     * are treated as the single '&'
      *
      * For example the string "&Look && Feel" is converted to "L"
      */

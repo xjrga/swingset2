@@ -30,8 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-
 import java.util.Random;
 
 /**
@@ -42,6 +40,7 @@ import java.util.Random;
  * @author Josh Bloch
  */
 class Permuter {
+
     /**
      * The size of the permutation.
      */
@@ -58,11 +57,11 @@ class Permuter {
     private int addend = 22;
 
     public Permuter(int n) {
-        if (n<0) {
+        if (n < 0) {
             throw new IllegalArgumentException();
         }
         modulus = n;
-        if (n==1) {
+        if (n == 1) {
             return;
         }
 
@@ -77,8 +76,8 @@ class Permuter {
 
     /**
      * Returns the integer to which this permuter maps the specified integer.
-     * The specified integer must be between 0 and n-1, and the returned
-     * integer will be as well.
+     * The specified integer must be between 0 and n-1, and the returned integer
+     * will be as well.
      */
     public int map(int i) {
         return (multiplier * i + addend) % modulus;
@@ -88,7 +87,7 @@ class Permuter {
      * Calculate GCD of a and b, which are assumed to be non-negative.
      */
     private static int gcd(int a, int b) {
-        while(b != 0) {
+        while (b != 0) {
             int tmp = a % b;
             a = b;
             b = tmp;
@@ -97,13 +96,13 @@ class Permuter {
     }
 
     /**
-     * Simple test.  Takes modulus on command line and prints out permutation.
+     * Simple test. Takes modulus on command line and prints out permutation.
      */
     public static void main(String[] args) {
         int modulus = Integer.parseInt(args[0]);
         Permuter p = new Permuter(modulus);
-        for (int i=0; i<modulus; i++) {
-            System.out.print(p.map(i)+" ");
+        for (int i = 0; i < modulus; i++) {
+            System.out.print(p.map(i) + " ");
         }
         System.out.println();
     }

@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -53,6 +52,7 @@ import java.net.*;
  * @author Jeff Dinkins
  */
 public class FileChooserDemo extends DemoModule {
+
     JLabel theImage;
     Icon jpgIcon;
     Icon gifIcon;
@@ -133,14 +133,13 @@ public class FileChooserDemo extends DemoModule {
 
         // set the current directory to be the images directory
         File swingFile = new File("resources/images/About.jpg");
-        if(swingFile.exists()) {
+        if (swingFile.exists()) {
             fc.setCurrentDirectory(swingFile);
             fc.setSelectedFile(swingFile);
         }
 
         return fc;
     }
-
 
     public JButton createPlainFileChooserButton() {
         Action a = new AbstractAction(getString("FileChooserDemo.plainbutton")) {
@@ -151,7 +150,7 @@ public class FileChooserDemo extends DemoModule {
                 int result = fc.showOpenDialog(getDemoPanel());
 
                 // if we selected an image, load the image
-                if(result == JFileChooser.APPROVE_OPTION) {
+                if (result == JFileChooser.APPROVE_OPTION) {
                     loadImage(fc.getSelectedFile().getPath());
                 }
             }
@@ -166,8 +165,8 @@ public class FileChooserDemo extends DemoModule {
 
                 // Add filefilter & fileview
                 javax.swing.filechooser.FileFilter filter = createFileFilter(
-                    getString("FileChooserDemo.filterdescription"),
-                    "jpg", "gif");
+                        getString("FileChooserDemo.filterdescription"),
+                        "jpg", "gif");
                 ExampleFileView fileView = new ExampleFileView();
                 fileView.putIcon("jpg", jpgIcon);
                 fileView.putIcon("gif", gifIcon);
@@ -182,7 +181,7 @@ public class FileChooserDemo extends DemoModule {
                 int result = fc.showOpenDialog(getDemoPanel());
 
                 // if we selected an image, load the image
-                if(result == JFileChooser.APPROVE_OPTION) {
+                if (result == JFileChooser.APPROVE_OPTION) {
                     loadImage(fc.getSelectedFile().getPath());
                 }
             }
@@ -194,16 +193,16 @@ public class FileChooserDemo extends DemoModule {
     JFileChooser fc;
 
     private javax.swing.filechooser.FileFilter createFileFilter(
-            String description, String...extensions) {
+            String description, String... extensions) {
         description = createFileNameFilterDescriptionFromExtensions(
-                    description, extensions);
+                description, extensions);
         return new FileNameExtensionFilter(description, extensions);
     }
 
     private String createFileNameFilterDescriptionFromExtensions(
             String description, String[] extensions) {
-        String fullDescription = (description == null) ?
-                "(" : description + " (";
+        String fullDescription = (description == null)
+                ? "(" : description + " (";
         // build the description from the extension list
         fullDescription += "." + extensions[0];
         for (int i = 1; i < extensions.length; i++) {
@@ -221,8 +220,8 @@ public class FileChooserDemo extends DemoModule {
 
                 // Add filefilter & fileview
                 javax.swing.filechooser.FileFilter filter = createFileFilter(
-                    getString("FileChooserDemo.filterdescription"),
-                    "jpg", "gif");
+                        getString("FileChooserDemo.filterdescription"),
+                        "jpg", "gif");
                 ExampleFileView fileView = new ExampleFileView();
                 fileView.putIcon("jpg", jpgIcon);
                 fileView.putIcon("gif", gifIcon);
@@ -284,7 +283,7 @@ public class FileChooserDemo extends DemoModule {
             public void actionPerformed(ActionEvent e) {
                 File file = fc.getSelectedFile();
                 String text;
-                if(file == null) {
+                if (file == null) {
                     text = getString("FileChooserDemo.nofileselected");
                 } else {
                     text = "<html>" + getString("FileChooserDemo.thefile");
@@ -301,7 +300,7 @@ public class FileChooserDemo extends DemoModule {
             public void actionPerformed(ActionEvent e) {
                 dialog.dispose();
                 if (!e.getActionCommand().equals(JFileChooser.CANCEL_SELECTION)
-                    && fc.getSelectedFile() != null) {
+                        && fc.getSelectedFile() != null) {
 
                     loadImage(fc.getSelectedFile().getPath());
                 }
@@ -339,25 +338,28 @@ public class FileChooserDemo extends DemoModule {
     }
 
     class MyImageIcon extends ImageIcon {
+
         public MyImageIcon(String filename) {
             super(filename);
-        };
+        }
+
+        ;
         public synchronized void paintIcon(Component c, Graphics g, int x, int y) {
             g.setColor(Color.white);
-            g.fillRect(0,0, c.getWidth(), c.getHeight());
-            if(getImageObserver() == null) {
+            g.fillRect(0, 0, c.getWidth(), c.getHeight());
+            if (getImageObserver() == null) {
                 g.drawImage(
-                    getImage(),
-                    c.getWidth()/2 - getIconWidth()/2,
-                    c.getHeight()/2 - getIconHeight()/2,
-                    c
+                        getImage(),
+                        c.getWidth() / 2 - getIconWidth() / 2,
+                        c.getHeight() / 2 - getIconHeight() / 2,
+                        c
                 );
             } else {
                 g.drawImage(
-                    getImage(),
-                    c.getWidth()/2 - getIconWidth()/2,
-                    c.getHeight()/2 - getIconHeight()/2,
-                    getImageObserver()
+                        getImage(),
+                        c.getWidth() / 2 - getIconWidth() / 2,
+                        c.getHeight() / 2 - getIconHeight() / 2,
+                        getImageObserver()
                 );
             }
         }
@@ -380,12 +382,13 @@ public class FileChooserDemo extends DemoModule {
 
     public JButton createImageButton(Action a) {
         JButton b = new JButton(a);
-        b.setMargin(new Insets(0,0,0,0));
+        b.setMargin(new Insets(0, 0, 0, 0));
         return b;
     }
 }
 
 class FilePreviewer extends JComponent implements PropertyChangeListener {
+
     ImageIcon thumbnail = null;
 
     public FilePreviewer(JFileChooser fc) {
@@ -399,9 +402,9 @@ class FilePreviewer extends JComponent implements PropertyChangeListener {
             thumbnail = null;
         } else {
             ImageIcon tmpIcon = new ImageIcon(f.getPath());
-            if(tmpIcon.getIconWidth() > 90) {
+            if (tmpIcon.getIconWidth() > 90) {
                 thumbnail = new ImageIcon(
-                    tmpIcon.getImage().getScaledInstance(90, -1, Image.SCALE_DEFAULT));
+                        tmpIcon.getImage().getScaledInstance(90, -1, Image.SCALE_DEFAULT));
             } else {
                 thumbnail = tmpIcon;
             }
@@ -410,8 +413,8 @@ class FilePreviewer extends JComponent implements PropertyChangeListener {
 
     public void propertyChange(PropertyChangeEvent e) {
         String prop = e.getPropertyName();
-        if(prop == JFileChooser.SELECTED_FILE_CHANGED_PROPERTY) {
-            if(isShowing()) {
+        if (prop == JFileChooser.SELECTED_FILE_CHANGED_PROPERTY) {
+            if (isShowing()) {
                 loadImage((File) e.getNewValue());
                 repaint();
             }
@@ -420,14 +423,14 @@ class FilePreviewer extends JComponent implements PropertyChangeListener {
 
     public void paint(Graphics g) {
         super.paint(g);
-        if(thumbnail != null) {
-            int x = getWidth()/2 - thumbnail.getIconWidth()/2;
-            int y = getHeight()/2 - thumbnail.getIconHeight()/2;
-            if(y < 0) {
+        if (thumbnail != null) {
+            int x = getWidth() / 2 - thumbnail.getIconWidth() / 2;
+            int y = getHeight() / 2 - thumbnail.getIconHeight() / 2;
+            if (y < 0) {
                 y = 0;
             }
 
-            if(x < 5) {
+            if (x < 5) {
                 x = 5;
             }
             thumbnail.paintIcon(this, g, x, y);

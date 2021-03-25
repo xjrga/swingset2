@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -101,9 +100,9 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 
         // Create a panel to hold buttons
         JPanel comboBoxPanel = new JPanel() {
-                public Dimension getMaximumSize() {
-                    return new Dimension(getPreferredSize().width, super.getMaximumSize().height);
-                }
+            public Dimension getMaximumSize() {
+                return new Dimension(getPreferredSize().width, super.getMaximumSize().height);
+            }
         };
         comboBoxPanel.setLayout(new BoxLayout(comboBoxPanel, BoxLayout.Y_AXIS));
 
@@ -141,7 +140,6 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
         comboBoxPanel.add(new JPanel(new BorderLayout()));
 
         // Create and place the Face.
-
         face = new Face();
         JPanel facePanel = new JPanel();
         facePanel.setLayout(new BorderLayout());
@@ -151,20 +149,20 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
         facePanel.add(faceLabel, BorderLayout.CENTER);
         // Indicate that the face panel is controlled by the hair, eyes and
         // mouth combo boxes.
-        Object [] controlledByObjects = new Object[3];
+        Object[] controlledByObjects = new Object[3];
         controlledByObjects[0] = hairCB;
         controlledByObjects[1] = eyesCB;
         controlledByObjects[2] = mouthCB;
-        AccessibleRelation controlledByRelation =
-            new AccessibleRelation(AccessibleRelation.CONTROLLED_BY_PROPERTY,
-                                   controlledByObjects);
+        AccessibleRelation controlledByRelation
+                = new AccessibleRelation(AccessibleRelation.CONTROLLED_BY_PROPERTY,
+                        controlledByObjects);
         facePanel.getAccessibleContext().getAccessibleRelationSet().add(controlledByRelation);
 
         // Indicate that the hair, eyes and mouth combo boxes are controllers
         // for the face panel.
-        AccessibleRelation controllerForRelation =
-            new AccessibleRelation(AccessibleRelation.CONTROLLER_FOR_PROPERTY,
-                                   facePanel);
+        AccessibleRelation controllerForRelation
+                = new AccessibleRelation(AccessibleRelation.CONTROLLER_FOR_PROPERTY,
+                        facePanel);
         hairCB.getAccessibleContext().getAccessibleRelationSet().add(controllerForRelation);
         eyesCB.getAccessibleContext().getAccessibleRelationSet().add(controllerForRelation);
         mouthCB.getAccessibleContext().getAccessibleRelationSet().add(controllerForRelation);
@@ -176,19 +174,19 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
         innerPanel.add(Box.createRigidArea(HGAP20));
 
         // load up the face parts
-        addFace("brent",     getString("ComboBoxDemo.brent"));
-        addFace("georges",   getString("ComboBoxDemo.georges"));
-        addFace("hans",      getString("ComboBoxDemo.hans"));
-        addFace("howard",    getString("ComboBoxDemo.howard"));
-        addFace("james",     getString("ComboBoxDemo.james"));
-        addFace("jeff",      getString("ComboBoxDemo.jeff"));
-        addFace("jon",       getString("ComboBoxDemo.jon"));
-        addFace("lara",      getString("ComboBoxDemo.lara"));
-        addFace("larry",     getString("ComboBoxDemo.larry"));
-        addFace("lisa",      getString("ComboBoxDemo.lisa"));
-        addFace("michael",   getString("ComboBoxDemo.michael"));
-        addFace("philip",    getString("ComboBoxDemo.philip"));
-        addFace("scott",     getString("ComboBoxDemo.scott"));
+        addFace("brent", getString("ComboBoxDemo.brent"));
+        addFace("georges", getString("ComboBoxDemo.georges"));
+        addFace("hans", getString("ComboBoxDemo.hans"));
+        addFace("howard", getString("ComboBoxDemo.howard"));
+        addFace("james", getString("ComboBoxDemo.james"));
+        addFace("jeff", getString("ComboBoxDemo.jeff"));
+        addFace("jon", getString("ComboBoxDemo.jon"));
+        addFace("lara", getString("ComboBoxDemo.lara"));
+        addFace("larry", getString("ComboBoxDemo.larry"));
+        addFace("lisa", getString("ComboBoxDemo.lisa"));
+        addFace("michael", getString("ComboBoxDemo.michael"));
+        addFace("philip", getString("ComboBoxDemo.philip"));
+        addFace("scott", getString("ComboBoxDemo.scott"));
 
         // set the default face
         presetCB.setSelectedIndex(0);
@@ -204,13 +202,13 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
         parts.put(name, i18n_name); // reverse name lookup
 
         i = createImageIcon("combobox/" + name + "hair.jpg", i18n_name + i18n_hair);
-        parts.put(name +  "hair", i);
+        parts.put(name + "hair", i);
 
         i = createImageIcon("combobox/" + name + "eyes.jpg", i18n_name + i18n_eyes);
-        parts.put(name +  "eyes", i);
+        parts.put(name + "eyes", i);
 
         i = createImageIcon("combobox/" + name + "mouth.jpg", i18n_name + i18n_mouth);
-        parts.put(name +  "mouth", i);
+        parts.put(name + "mouth", i);
     }
 
     Face getFace() {
@@ -278,75 +276,75 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == hairCB) {
+        if (e.getSource() == hairCB) {
             String name = (String) parts.get((String) hairCB.getSelectedItem());
             face.setHair((ImageIcon) parts.get(name + "hair"));
             faceLabel.repaint();
-        } else if(e.getSource() == eyesCB) {
+        } else if (e.getSource() == eyesCB) {
             String name = (String) parts.get((String) eyesCB.getSelectedItem());
             face.setEyes((ImageIcon) parts.get(name + "eyes"));
             faceLabel.repaint();
-        } else if(e.getSource() == mouthCB) {
+        } else if (e.getSource() == mouthCB) {
             String name = (String) parts.get((String) mouthCB.getSelectedItem());
             face.setMouth((ImageIcon) parts.get(name + "mouth"));
             faceLabel.repaint();
-        } else if(e.getSource() == presetCB) {
+        } else if (e.getSource() == presetCB) {
             String hair = null;
             String eyes = null;
             String mouth = null;
-            switch(presetCB.getSelectedIndex()) {
-               case 0:
-                   hair = (String) parts.get("philip");
-                   eyes = (String) parts.get("howard");
-                   mouth = (String) parts.get("jeff");
-                   break;
-               case 1:
-                   hair = (String) parts.get("jeff");
-                   eyes = (String) parts.get("larry");
-                   mouth = (String) parts.get("philip");
-                   break;
-               case 2:
-                   hair = (String) parts.get("howard");
-                   eyes = (String) parts.get("scott");
-                   mouth = (String) parts.get("hans");
-                   break;
-               case 3:
-                   hair = (String) parts.get("philip");
-                   eyes = (String) parts.get("jeff");
-                   mouth = (String) parts.get("hans");
-                   break;
-               case 4:
-                   hair = (String) parts.get("brent");
-                   eyes = (String) parts.get("jon");
-                   mouth = (String) parts.get("scott");
-                   break;
-               case 5:
-                   hair = (String) parts.get("lara");
-                   eyes = (String) parts.get("larry");
-                   mouth = (String) parts.get("lisa");
-                   break;
-               case 6:
-                   hair = (String) parts.get("james");
-                   eyes = (String) parts.get("philip");
-                   mouth = (String) parts.get("michael");
-                   break;
-               case 7:
-                   hair = (String) parts.get("philip");
-                   eyes = (String) parts.get("lisa");
-                   mouth = (String) parts.get("brent");
-                   break;
-               case 8:
-                   hair = (String) parts.get("james");
-                   eyes = (String) parts.get("philip");
-                   mouth = (String) parts.get("jon");
-                   break;
-               case 9:
-                   hair = (String) parts.get("lara");
-                   eyes = (String) parts.get("jon");
-                   mouth = (String) parts.get("scott");
-                   break;
+            switch (presetCB.getSelectedIndex()) {
+                case 0:
+                    hair = (String) parts.get("philip");
+                    eyes = (String) parts.get("howard");
+                    mouth = (String) parts.get("jeff");
+                    break;
+                case 1:
+                    hair = (String) parts.get("jeff");
+                    eyes = (String) parts.get("larry");
+                    mouth = (String) parts.get("philip");
+                    break;
+                case 2:
+                    hair = (String) parts.get("howard");
+                    eyes = (String) parts.get("scott");
+                    mouth = (String) parts.get("hans");
+                    break;
+                case 3:
+                    hair = (String) parts.get("philip");
+                    eyes = (String) parts.get("jeff");
+                    mouth = (String) parts.get("hans");
+                    break;
+                case 4:
+                    hair = (String) parts.get("brent");
+                    eyes = (String) parts.get("jon");
+                    mouth = (String) parts.get("scott");
+                    break;
+                case 5:
+                    hair = (String) parts.get("lara");
+                    eyes = (String) parts.get("larry");
+                    mouth = (String) parts.get("lisa");
+                    break;
+                case 6:
+                    hair = (String) parts.get("james");
+                    eyes = (String) parts.get("philip");
+                    mouth = (String) parts.get("michael");
+                    break;
+                case 7:
+                    hair = (String) parts.get("philip");
+                    eyes = (String) parts.get("lisa");
+                    mouth = (String) parts.get("brent");
+                    break;
+                case 8:
+                    hair = (String) parts.get("james");
+                    eyes = (String) parts.get("philip");
+                    mouth = (String) parts.get("jon");
+                    break;
+                case 9:
+                    hair = (String) parts.get("lara");
+                    eyes = (String) parts.get("jon");
+                    mouth = (String) parts.get("scott");
+                    break;
             }
-            if(hair != null) {
+            if (hair != null) {
                 hairCB.setSelectedItem(hair);
                 eyesCB.setSelectedItem(eyes);
                 mouthCB.setSelectedItem(mouth);
@@ -356,6 +354,7 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
     }
 
     class Face implements Icon {
+
         ImageIcon hair;
         ImageIcon eyes;
         ImageIcon mouth;
@@ -374,17 +373,19 @@ public class ComboBoxDemo extends DemoModule implements ActionListener {
 
         public void paintIcon(Component c, Graphics g, int x, int y) {
             int height = y;
-            x = c.getWidth()/2 - getIconWidth()/2;
+            x = c.getWidth() / 2 - getIconWidth() / 2;
 
-            if(hair != null) {
-                hair.paintIcon(c, g, x, height);   height += hair.getIconHeight();
+            if (hair != null) {
+                hair.paintIcon(c, g, x, height);
+                height += hair.getIconHeight();
             }
 
-            if(eyes != null) {
-                eyes.paintIcon(c, g, x, height);   height += eyes.getIconHeight();
+            if (eyes != null) {
+                eyes.paintIcon(c, g, x, height);
+                height += eyes.getIconHeight();
             }
 
-            if(mouth != null) {
+            if (mouth != null) {
                 mouth.paintIcon(c, g, x, height);
             }
         }

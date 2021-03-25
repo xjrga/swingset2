@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -102,19 +101,19 @@ public class SliderDemo extends DemoModule {
         hp = new JPanel();
         hp.setLayout(new BoxLayout(hp, BoxLayout.Y_AXIS));
         hp.setBorder(new TitledBorder(
-                        border,
-                        getString("SliderDemo.horizontal"),
-                        TitledBorder.LEFT,
-                        TitledBorder.ABOVE_TOP));
+                border,
+                getString("SliderDemo.horizontal"),
+                TitledBorder.LEFT,
+                TitledBorder.ABOVE_TOP));
         tp.add(hp);
 
         vp = new JPanel();
         vp.setLayout(new BoxLayout(vp, BoxLayout.X_AXIS));
         vp.setBorder(new TitledBorder(
-                        border,
-                        getString("SliderDemo.vertical"),
-                        TitledBorder.LEFT,
-                        TitledBorder.ABOVE_TOP));
+                border,
+                getString("SliderDemo.vertical"),
+                TitledBorder.LEFT,
+                TitledBorder.ABOVE_TOP));
         tp.add(vp);
 
         // Horizontal Slider 1
@@ -155,17 +154,17 @@ public class SliderDemo extends DemoModule {
         p.setBorder(new TitledBorder(getString("SliderDemo.ticks")));
         s = new JSlider(0, 11, 6);
 
-        s.putClientProperty("JSlider.isFilled", Boolean.TRUE );
+        s.putClientProperty("JSlider.isFilled", Boolean.TRUE);
 
         s.setPaintTicks(true);
         s.setMajorTickSpacing(5);
         s.setMinorTickSpacing(1);
 
-        s.setPaintLabels( true );
-        s.setSnapToTicks( true );
+        s.setPaintLabels(true);
+        s.setSnapToTicks(true);
 
         s.getLabelTable().put(new Integer(11), new JLabel(new Integer(11).toString(), JLabel.CENTER));
-        s.setLabelTable( s.getLabelTable() );
+        s.setLabelTable(s.getLabelTable());
 
         s.getAccessibleContext().setAccessibleName(getString("SliderDemo.minorticks"));
         s.getAccessibleContext().setAccessibleDescription(getString("SliderDemo.minorticksdescription"));
@@ -198,7 +197,6 @@ public class SliderDemo extends DemoModule {
         hp.add(p);
 
         //////////////////////////////////////////////////////////////////////////////
-
         // Vertical Slider 1
         p = new JPanel();
         p.setLayout(new BoxLayout(p, BoxLayout.X_AXIS));
@@ -219,7 +217,7 @@ public class SliderDemo extends DemoModule {
         p.setBorder(new TitledBorder(getString("SliderDemo.majorticks")));
         s = new JSlider(JSlider.VERTICAL, 100, 1000, 400);
 
-        s.putClientProperty( "JSlider.isFilled", Boolean.TRUE );
+        s.putClientProperty("JSlider.isFilled", Boolean.TRUE);
 
         s.setPaintTicks(true);
         s.setMajorTickSpacing(100);
@@ -241,7 +239,7 @@ public class SliderDemo extends DemoModule {
         s.setMajorTickSpacing(20);
         s.setMinorTickSpacing(5);
 
-        s.setPaintLabels( true );
+        s.setPaintLabels(true);
 
         s.getAccessibleContext().setAccessibleName(getString("SliderDemo.minorticks"));
         s.getAccessibleContext().setAccessibleDescription(getString("SliderDemo.minorticksdescription"));
@@ -272,12 +270,15 @@ public class SliderDemo extends DemoModule {
     }
 
     class SliderListener implements ChangeListener {
+
         JLabel tf;
+
         public SliderListener(JLabel f) {
             tf = f;
         }
+
         public void stateChanged(ChangeEvent e) {
-            JSlider s1 = (JSlider)e.getSource();
+            JSlider s1 = (JSlider) e.getSource();
             tf.setText(getString("SliderDemo.slidervalue") + s1.getValue());
         }
     }

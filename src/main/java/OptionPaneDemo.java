@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -84,11 +83,16 @@ public class OptionPaneDemo extends DemoModule {
         bp.add(Box.createRigidArea(VGAP30));
         bp.add(Box.createRigidArea(VGAP30));
 
-        bp.add(createInputDialogButton());      bp.add(Box.createRigidArea(VGAP15));
-        bp.add(createWarningDialogButton());    bp.add(Box.createRigidArea(VGAP15));
-        bp.add(createMessageDialogButton());    bp.add(Box.createRigidArea(VGAP15));
-        bp.add(createComponentDialogButton());  bp.add(Box.createRigidArea(VGAP15));
-        bp.add(createConfirmDialogButton());    bp.add(Box.createVerticalGlue());
+        bp.add(createInputDialogButton());
+        bp.add(Box.createRigidArea(VGAP15));
+        bp.add(createWarningDialogButton());
+        bp.add(Box.createRigidArea(VGAP15));
+        bp.add(createMessageDialogButton());
+        bp.add(Box.createRigidArea(VGAP15));
+        bp.add(createComponentDialogButton());
+        bp.add(Box.createRigidArea(VGAP15));
+        bp.add(createConfirmDialogButton());
+        bp.add(Box.createVerticalGlue());
 
         demo.add(Box.createHorizontalGlue());
         demo.add(bp);
@@ -99,10 +103,10 @@ public class OptionPaneDemo extends DemoModule {
         Action a = new AbstractAction(getString("OptionPaneDemo.warningbutton")) {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(
-                    getDemoPanel(),
-                    getString("OptionPaneDemo.warningtext"),
-                    getString("OptionPaneDemo.warningtitle"),
-                    JOptionPane.WARNING_MESSAGE
+                        getDemoPanel(),
+                        getString("OptionPaneDemo.warningtext"),
+                        getString("OptionPaneDemo.warningtitle"),
+                        JOptionPane.WARNING_MESSAGE
                 );
             }
         };
@@ -114,10 +118,11 @@ public class OptionPaneDemo extends DemoModule {
             URL img = getClass().getResource("images/optionpane/bottle.gif");
             String imagesrc = "<img src=\"" + img + "\" width=\"284\" height=\"100\">";
             String message = getString("OptionPaneDemo.messagetext");
+
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(
-                    getDemoPanel(),
-                    "<html>" + imagesrc + "<br><center>" + message + "</center><br></html>"
+                        getDemoPanel(),
+                        "<html>" + imagesrc + "<br><center>" + message + "</center><br></html>"
                 );
             }
         };
@@ -128,9 +133,9 @@ public class OptionPaneDemo extends DemoModule {
         Action a = new AbstractAction(getString("OptionPaneDemo.confirmbutton")) {
             public void actionPerformed(ActionEvent e) {
                 int result = JOptionPane.showConfirmDialog(getDemoPanel(), getString("OptionPaneDemo.confirmquestion"));
-                if(result == JOptionPane.YES_OPTION) {
+                if (result == JOptionPane.YES_OPTION) {
                     JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.confirmyes"));
-                } else if(result == JOptionPane.NO_OPTION) {
+                } else if (result == JOptionPane.NO_OPTION) {
                     JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.confirmno"));
                 }
             }
@@ -144,8 +149,8 @@ public class OptionPaneDemo extends DemoModule {
                 String result = JOptionPane.showInputDialog(getDemoPanel(), getString("OptionPaneDemo.inputquestion"));
                 if ((result != null) && (result.length() > 0)) {
                     JOptionPane.showMessageDialog(getDemoPanel(),
-                                    result + ": " +
-                                    getString("OptionPaneDemo.inputresponse"));
+                            result + ": "
+                            + getString("OptionPaneDemo.inputresponse"));
                 }
             }
         };
@@ -159,7 +164,7 @@ public class OptionPaneDemo extends DemoModule {
                 // as many options as you want:
 
                 // Messages
-                Object[]      message = new Object[4];
+                Object[] message = new Object[4];
                 message[0] = getString("OptionPaneDemo.componentmessage");
                 message[1] = new JTextField(getString("OptionPaneDemo.componenttextfield"));
 
@@ -179,30 +184,30 @@ public class OptionPaneDemo extends DemoModule {
                     getString("OptionPaneDemo.component_op5")
                 };
                 int result = JOptionPane.showOptionDialog(
-                    getDemoPanel(),                             // the parent that the dialog blocks
-                    message,                                    // the dialog message array
-                    getString("OptionPaneDemo.componentitle"), // the title of the dialog window
-                    JOptionPane.DEFAULT_OPTION,                 // option type
-                    JOptionPane.INFORMATION_MESSAGE,            // message type
-                    null,                                // optional icon, use null to use the default icon
-                    options,                                    // options string array, will be made into buttons
-                    options[3]                                  // option that should be made into a default button
+                        getDemoPanel(), // the parent that the dialog blocks
+                        message, // the dialog message array
+                        getString("OptionPaneDemo.componentitle"), // the title of the dialog window
+                        JOptionPane.DEFAULT_OPTION, // option type
+                        JOptionPane.INFORMATION_MESSAGE, // message type
+                        null, // optional icon, use null to use the default icon
+                        options, // options string array, will be made into buttons
+                        options[3] // option that should be made into a default button
                 );
-                switch(result) {
-                   case 0: // yes
-                     JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r1"));
-                     break;
-                   case 1: // no
-                     JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r2"));
-                     break;
-                   case 2: // maybe
-                     JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r3"));
-                     break;
-                   case 3: // probably
-                     JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r4"));
-                     break;
-                   default:
-                     break;
+                switch (result) {
+                    case 0: // yes
+                        JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r1"));
+                        break;
+                    case 1: // no
+                        JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r2"));
+                        break;
+                    case 2: // maybe
+                        JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r3"));
+                        break;
+                    case 3: // probably
+                        JOptionPane.showMessageDialog(getDemoPanel(), getString("OptionPaneDemo.component_r4"));
+                        break;
+                    default:
+                        break;
                 }
 
             }

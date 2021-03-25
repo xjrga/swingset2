@@ -18,7 +18,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.UIDefaults;
@@ -47,7 +46,7 @@ public class DarkMetal extends MetalTheme {
 
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
-        super.addCustomEntriesToTable(table);        
+        super.addCustomEntriesToTable(table);
     }
 
     protected ColorUIResource getPrimary1() {

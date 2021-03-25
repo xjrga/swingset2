@@ -49,29 +49,29 @@ public class DemoModule extends JApplet {
     private int PREFERRED_HEIGHT = 600;
 
     Border loweredBorder = new CompoundBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED),
-                                              new EmptyBorder(5,5,5,5));
+            new EmptyBorder(5, 5, 5, 5));
 
     // Premade convenience dimensions, for use wherever you need 'em.
-    public static Dimension HGAP2 = new Dimension(2,1);
-    public static Dimension VGAP2 = new Dimension(1,2);
+    public static Dimension HGAP2 = new Dimension(2, 1);
+    public static Dimension VGAP2 = new Dimension(1, 2);
 
-    public static Dimension HGAP5 = new Dimension(5,1);
-    public static Dimension VGAP5 = new Dimension(1,5);
+    public static Dimension HGAP5 = new Dimension(5, 1);
+    public static Dimension VGAP5 = new Dimension(1, 5);
 
-    public static Dimension HGAP10 = new Dimension(10,1);
-    public static Dimension VGAP10 = new Dimension(1,10);
+    public static Dimension HGAP10 = new Dimension(10, 1);
+    public static Dimension VGAP10 = new Dimension(1, 10);
 
-    public static Dimension HGAP15 = new Dimension(15,1);
-    public static Dimension VGAP15 = new Dimension(1,15);
+    public static Dimension HGAP15 = new Dimension(15, 1);
+    public static Dimension VGAP15 = new Dimension(1, 15);
 
-    public static Dimension HGAP20 = new Dimension(20,1);
-    public static Dimension VGAP20 = new Dimension(1,20);
+    public static Dimension HGAP20 = new Dimension(20, 1);
+    public static Dimension VGAP20 = new Dimension(1, 20);
 
-    public static Dimension HGAP25 = new Dimension(25,1);
-    public static Dimension VGAP25 = new Dimension(1,25);
+    public static Dimension HGAP25 = new Dimension(25, 1);
+    public static Dimension VGAP25 = new Dimension(1, 25);
 
-    public static Dimension HGAP30 = new Dimension(30,1);
-    public static Dimension VGAP30 = new Dimension(1,30);
+    public static Dimension HGAP30 = new Dimension(30, 1);
+    public static Dimension VGAP30 = new Dimension(1, 30);
 
     private SwingSet2 swingset = null;
     private JPanel panel = null;
@@ -107,12 +107,11 @@ public class DemoModule extends JApplet {
         return swingset;
     }
 
-
     public String getString(String key) {
 
         if (getSwingSet2() != null) {
             return getSwingSet2().getString(key);
-        }else{
+        } else {
             return "nada";
         }
     }
@@ -122,7 +121,7 @@ public class DemoModule extends JApplet {
     }
 
     public ImageIcon createImageIcon(String filename, String description) {
-        if(getSwingSet2() != null) {
+        if (getSwingSet2() != null) {
             return getSwingSet2().createImageIcon(filename, description);
         } else {
             String path = "images/" + filename;
@@ -130,37 +129,42 @@ public class DemoModule extends JApplet {
         }
     }
 
-
     public String getSourceCode() {
         return sourceCode;
     }
 
     public void loadSourceCode() {
-        if(getResourceName() != null) {
+        if (getResourceName() != null) {
             String filename = getResourceName() + ".java";
-            sourceCode = new String("<html><body bgcolor=\"#ffffff\"><pre>");            
-            String path = "src/main/java/"+filename;
+            sourceCode = new String("<html><body bgcolor=\"#ffffff\"><pre>");
+            String path = "src/main/java/" + filename;
             Path realPath = Path.of(path);
             try {
                 sourceCode += Files.readString(realPath);
                 sourceCode += new String("</pre></body></html>");
             } catch (Exception e) {
                 sourceCode = "Could not load file: " + path;
-            }            
+            }
         }
     }
 
     public String getName() {
         return getString(getResourceName() + ".name");
-    };
+    }
+
+    ;
 
     public Icon getIcon() {
         return createImageIcon(iconPath, getResourceName() + ".name");
-    };
+    }
+
+    ;
 
     public String getToolTip() {
         return getString(getResourceName() + ".tooltip");
-    };
+    }
+
+    ;
 
     public void mainImpl() {
         JFrame frame = new JFrame(getName());
@@ -176,7 +180,7 @@ public class DemoModule extends JApplet {
         p.setLayout(new BoxLayout(p, BoxLayout.X_AXIS));
         p.setAlignmentY(TOP_ALIGNMENT);
         p.setAlignmentX(LEFT_ALIGNMENT);
-        if(threeD) {
+        if (threeD) {
             p.setBorder(loweredBorder);
         }
         return p;
@@ -187,7 +191,7 @@ public class DemoModule extends JApplet {
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         p.setAlignmentY(TOP_ALIGNMENT);
         p.setAlignmentX(LEFT_ALIGNMENT);
-        if(threeD) {
+        if (threeD) {
             p.setBorder(loweredBorder);
         }
         return p;
@@ -203,5 +207,6 @@ public class DemoModule extends JApplet {
         getContentPane().add(getDemoPanel(), BorderLayout.CENTER);
     }
 
-    void updateDragEnabled(boolean dragEnabled) {}
+    void updateDragEnabled(boolean dragEnabled) {
+    }
 }

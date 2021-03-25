@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -52,8 +51,8 @@ import java.net.*;
  *
  * @author Jeff Dinkins
  */
-
 public class SwingSet2Applet extends JApplet {
+
     public void init() {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(new SwingSet2(this), BorderLayout.CENTER);
@@ -73,6 +72,5 @@ public class SwingSet2Applet extends JApplet {
 
         return url;
     }
-
 
 }

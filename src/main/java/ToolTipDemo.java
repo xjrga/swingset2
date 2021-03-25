@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -88,8 +87,8 @@ public class ToolTipDemo extends DemoModule {
         p.add(cow);
     }
 
-
     class Cow extends JLabel {
+
         Polygon cowgon = new Polygon();
 
         public Cow() {
@@ -97,19 +96,32 @@ public class ToolTipDemo extends DemoModule {
             setAlignmentX(CENTER_ALIGNMENT);
 
             // Set polygon points that define the outline of the cow.
-            cowgon.addPoint(3,20);    cowgon.addPoint(44,4);
-            cowgon.addPoint(79,15);   cowgon.addPoint(130,11);
-            cowgon.addPoint(252,5);   cowgon.addPoint(181,17);
-            cowgon.addPoint(301,45);  cowgon.addPoint(292,214);
-            cowgon.addPoint(269,209); cowgon.addPoint(266,142);
-            cowgon.addPoint(250,161); cowgon.addPoint(235,218);
-            cowgon.addPoint(203,206); cowgon.addPoint(215,137);
-            cowgon.addPoint(195,142); cowgon.addPoint(143,132);
-            cowgon.addPoint(133,189); cowgon.addPoint(160,200);
-            cowgon.addPoint(97,196);  cowgon.addPoint(107,182);
-            cowgon.addPoint(118,185); cowgon.addPoint(110,144);
-            cowgon.addPoint(59,77);   cowgon.addPoint(30,82);
-            cowgon.addPoint(30,35);   cowgon.addPoint(15,36);
+            cowgon.addPoint(3, 20);
+            cowgon.addPoint(44, 4);
+            cowgon.addPoint(79, 15);
+            cowgon.addPoint(130, 11);
+            cowgon.addPoint(252, 5);
+            cowgon.addPoint(181, 17);
+            cowgon.addPoint(301, 45);
+            cowgon.addPoint(292, 214);
+            cowgon.addPoint(269, 209);
+            cowgon.addPoint(266, 142);
+            cowgon.addPoint(250, 161);
+            cowgon.addPoint(235, 218);
+            cowgon.addPoint(203, 206);
+            cowgon.addPoint(215, 137);
+            cowgon.addPoint(195, 142);
+            cowgon.addPoint(143, 132);
+            cowgon.addPoint(133, 189);
+            cowgon.addPoint(160, 200);
+            cowgon.addPoint(97, 196);
+            cowgon.addPoint(107, 182);
+            cowgon.addPoint(118, 185);
+            cowgon.addPoint(110, 144);
+            cowgon.addPoint(59, 77);
+            cowgon.addPoint(30, 82);
+            cowgon.addPoint(30, 35);
+            cowgon.addPoint(15, 36);
         }
 
         boolean moo = false;
@@ -119,34 +131,34 @@ public class ToolTipDemo extends DemoModule {
         // Use the contains method to set the tooltip text depending
         // on where the mouse is over the cow.
         public boolean contains(int x, int y) {
-            if(!cowgon.contains(new Point(x, y))) {
+            if (!cowgon.contains(new Point(x, y))) {
                 return false;
             }
 
-            if((x > 30) && (x < 60) && (y > 60) && (y < 85)) {
-                if(!moo) {
-                    setToolTipText("<html><center><font color=blue size=+2>" +
-                                   getString("ToolTipDemo.moo") + "</font></center></html>");
+            if ((x > 30) && (x < 60) && (y > 60) && (y < 85)) {
+                if (!moo) {
+                    setToolTipText("<html><center><font color=blue size=+2>"
+                            + getString("ToolTipDemo.moo") + "</font></center></html>");
                     moo = true;
                     milk = false;
                     tail = false;
                 }
-            } else if((x > 150) && (x < 260) && (y > 90) && (y < 145)) {
-                if(!milk) {
-                    setToolTipText("<html><center><font face=AvantGarde size=+1 color=#D2691E>" +
-                                   getString("ToolTipDemo.got_milk") + "</font></center></html>");
+            } else if ((x > 150) && (x < 260) && (y > 90) && (y < 145)) {
+                if (!milk) {
+                    setToolTipText("<html><center><font face=AvantGarde size=+1 color=#D2691E>"
+                            + getString("ToolTipDemo.got_milk") + "</font></center></html>");
                     milk = true;
                     moo = false;
                     tail = false;
                 }
-            } else if((x > 280) && (x < 300) && (y > 20) && (y < 175)) {
-                if(!tail) {
+            } else if ((x > 280) && (x < 300) && (y > 20) && (y < 175)) {
+                if (!tail) {
                     setToolTipText("<html><em><b>" + getString("ToolTipDemo.tail") + "</b></em></html>");
                     tail = true;
                     moo = false;
                     milk = false;
                 }
-            } else if(moo || milk || tail) {
+            } else if (moo || milk || tail) {
                 setToolTipText(getString("ToolTipDemo.tooltip_features"));
                 moo = false;
                 tail = false;

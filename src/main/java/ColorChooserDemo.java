@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -71,7 +70,6 @@ public class ColorChooserDemo extends DemoModule {
         demo.mainImpl();
     }
 
-
     /**
      * ColorChooserDemo Constructor
      */
@@ -99,17 +97,17 @@ public class ColorChooserDemo extends DemoModule {
             public void actionPerformed(ActionEvent e) {
                 Color current = bezAnim.getOuterColor();
 
-                if(e.getSource() == backgroundColorButton) {
+                if (e.getSource() == backgroundColorButton) {
                     current = bezAnim.getBackgroundColor();
-                } else if(e.getSource() == gradientAButton) {
+                } else if (e.getSource() == gradientAButton) {
                     current = bezAnim.getGradientColorA();
-                } else if(e.getSource() == gradientBButton) {
+                } else if (e.getSource() == gradientBButton) {
                     current = bezAnim.getGradientColorB();
                 }
 
-                final JColorChooser chooser = new JColorChooser(current != null ?
-                                                                current :
-                                                                Color.WHITE);
+                final JColorChooser chooser = new JColorChooser(current != null
+                        ? current
+                        : Color.WHITE);
                 if (getSwingSet2() != null && getSwingSet2().isDragEnabled()) {
                     chooser.setDragEnabled(true);
                 }
@@ -122,19 +120,19 @@ public class ColorChooserDemo extends DemoModule {
                 };
 
                 JDialog dialog = JColorChooser.createDialog(getDemoPanel(),
-                                                            getString("ColorChooserDemo.chooser_title"),
-                                                            true,
-                                                            chooser,
-                                                            okListener,
-                                                            null);
+                        getString("ColorChooserDemo.chooser_title"),
+                        true,
+                        chooser,
+                        okListener,
+                        null);
 
                 dialog.show();
 
-                if(e.getSource() == outerColorButton) {
+                if (e.getSource() == outerColorButton) {
                     bezAnim.setOuterColor(chosen);
-                } else if(e.getSource() == backgroundColorButton) {
+                } else if (e.getSource() == backgroundColorButton) {
                     bezAnim.setBackgroundColor(chosen);
-                } else if(e.getSource() == gradientAButton) {
+                } else if (e.getSource() == gradientAButton) {
                     bezAnim.setGradientColorA(chosen);
                 } else {
                     bezAnim.setGradientColorB(chosen);
@@ -174,6 +172,7 @@ public class ColorChooserDemo extends DemoModule {
     }
 
     class ColorSwatch implements Icon {
+
         String gradient;
         BezierAnimationPanel bez;
 
@@ -193,16 +192,16 @@ public class ColorChooserDemo extends DemoModule {
         public void paintIcon(Component c, Graphics g, int x, int y) {
             g.setColor(Color.black);
             g.fillRect(x, y, getIconWidth(), getIconHeight());
-            if(gradient.equals("GradientA")) {
+            if (gradient.equals("GradientA")) {
                 g.setColor(bez.getGradientColorA());
-            } else if(gradient.equals("GradientB")) {
+            } else if (gradient.equals("GradientB")) {
                 g.setColor(bez.getGradientColorB());
-            } else if(gradient.equals("Background")) {
+            } else if (gradient.equals("Background")) {
                 g.setColor(bez.getBackgroundColor());
-            } else if(gradient.equals("OuterLine")) {
+            } else if (gradient.equals("OuterLine")) {
                 g.setColor(bez.getOuterColor());
             }
-            g.fillRect(x+2, y+2, getIconWidth()-4, getIconHeight()-4);
+            g.fillRect(x + 2, y + 2, getIconWidth() - 4, getIconHeight() - 4);
         }
     }
 

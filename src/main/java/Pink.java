@@ -26,12 +26,12 @@ public class Pink extends MetalTheme {
      * @author Jorge R Garcia de Alba     
      */
     public Pink() {
-        font = new FontUIResource("Dialog", Font.PLAIN, 13);        
-        secondary3 = new ColorUIResource(this.PINK);        
-        secondary2 = new ColorUIResource(this.PINK); 
+        font = new FontUIResource("Dialog", Font.PLAIN, 13);
+        secondary3 = new ColorUIResource(this.PINK);
+        secondary2 = new ColorUIResource(this.PINK);
         primary1 = new ColorUIResource(this.GREEN);
-        secondary1 = new ColorUIResource(this.GREEN);        
-        primary3 = new ColorUIResource(this.MEDIUMBLUE);                       
+        secondary1 = new ColorUIResource(this.GREEN);
+        primary3 = new ColorUIResource(this.MEDIUMBLUE);
         primary2 = new ColorUIResource(this.LIGHTBLUE);
     }
 

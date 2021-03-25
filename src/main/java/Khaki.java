@@ -6,7 +6,7 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
-public class Beige extends MetalTheme {
+public class Khaki extends MetalTheme {
 
     private FontUIResource font;
     private ColorUIResource primary1;
@@ -21,19 +21,19 @@ public class Beige extends MetalTheme {
     public final Color D = new Color(0x897846);
     public final Color E = new Color(0x9ba068);
     public final Color F = new Color(0xe0d5c1);
-    
+
     /*
-     * Beige Theme 
+     * Khaki Theme 
      * @author Jorge R Garcia de Alba     
      */
-    public Beige() {
-        font = new FontUIResource("Dialog", Font.PLAIN, 13);        
+    public Khaki() {
+        font = new FontUIResource("Dialog", Font.PLAIN, 13);
         secondary3 = new ColorUIResource(this.F);
         secondary2 = new ColorUIResource(this.F);
-        primary1 = new ColorUIResource(this.C);                
-        secondary1 = new ColorUIResource(this.C);        
+        primary1 = new ColorUIResource(this.C);
+        secondary1 = new ColorUIResource(this.C);
         primary2 = new ColorUIResource(this.B);
-        primary3 = new ColorUIResource(this.E);               
+        primary3 = new ColorUIResource(this.E);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Beige extends MetalTheme {
 
     @Override
     public String getName() {
-        return "Beige";
+        return "Khaki";
     }
 
     @Override

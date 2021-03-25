@@ -6,33 +6,39 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
-public class Green extends MetalTheme {
+public class Bronze extends MetalTheme {
 
-    private FontUIResource font;
-    private ColorUIResource primary1;
-    private ColorUIResource primary2;
-    private ColorUIResource primary3;
-    private ColorUIResource secondary1;
-    private ColorUIResource secondary2;
-    private ColorUIResource secondary3;
-    public final Color LIGHTGREEN = new Color(0x87bc92);
-    public final Color MEDIUMGREEN = new Color(0x5c8c4e);
-    public final Color YELLOW = new Color(0xdcad3b);
-    public final Color BLUE = new Color(0x2e88aa);
-    public final Color DARKGREEN = new Color(0x3d4335);
+    private final FontUIResource font;
+    private final ColorUIResource primary1;
+    private final ColorUIResource primary2;
+    private final ColorUIResource primary3;
+    private final ColorUIResource secondary1;
+    private final ColorUIResource secondary2;
+    private final ColorUIResource secondary3;
+    private final Color COLOR00 = new Color(0xffcc7e);
+    private final Color COLOR10 = new Color(0xe6b871);
+    private final Color COLOR20 = new Color(0xcca365);
+    private final Color COLOR30 = new Color(0xb38f58);
+    private final Color COLOR40 = new Color(0x997b4c);
+    private final Color COLOR50 = new Color(0x80663f);
+    private final Color COLOR60 = new Color(0x665232);
+    private final Color COLOR70 = new Color(0x4d3d26);
+    private final Color COLOR80 = new Color(0x332919);
+    private final Color COLOR90 = new Color(0x19140d);
+    private final Color COLOR100 = new Color(0x000000);
 
     /*
-     * Green Theme 
+     * Bronze Theme 
      * @author Jorge R Garcia de Alba     
      */
-    public Green() {
+    public Bronze() {
         font = new FontUIResource("Dialog", Font.PLAIN, 13);
-        secondary2 = new ColorUIResource(this.LIGHTGREEN);
-        primary1 = new ColorUIResource(this.DARKGREEN);
-        secondary1 = new ColorUIResource(this.MEDIUMGREEN);
-        primary2 = new ColorUIResource(this.BLUE);
-        primary3 = new ColorUIResource(this.YELLOW);
-        secondary3 = new ColorUIResource(this.LIGHTGREEN);
+        secondary3 = new ColorUIResource(this.COLOR40);
+        secondary2 = new ColorUIResource(this.COLOR40);
+        primary3 = new ColorUIResource(this.COLOR20);
+        primary1 = new ColorUIResource(this.COLOR00);
+        secondary1 = new ColorUIResource(this.COLOR30);
+        primary2 = new ColorUIResource(this.COLOR20);//        
     }
 
     @Override
@@ -42,7 +48,7 @@ public class Green extends MetalTheme {
 
     @Override
     public String getName() {
-        return "Green";
+        return "Bronze";
     }
 
     @Override

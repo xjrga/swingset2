@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -140,7 +139,7 @@ public class SplitPaneDemo extends DemoModule {
         checkBox.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 splitPane.setContinuousLayout(
-                    ((JCheckBox)e.getSource()).isSelected());
+                        ((JCheckBox) e.getSource()).isSelected());
             }
         });
         buttonWrapper.add(checkBox);
@@ -154,15 +153,15 @@ public class SplitPaneDemo extends DemoModule {
         checkBox.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 splitPane.setOneTouchExpandable(
-                    ((JCheckBox) e.getSource()).isSelected());
+                        ((JCheckBox) e.getSource()).isSelected());
             }
         });
         buttonWrapper.add(checkBox);
         wrapper.add(buttonWrapper);
 
         /* Create a text field to change the divider size. */
-        JPanel                   tfWrapper;
-        JLabel                   label;
+        JPanel tfWrapper;
+        JLabel label;
 
         divSize = new JTextField();
         divSize.setText(new Integer(splitPane.getDividerSize()).toString());
@@ -170,7 +169,7 @@ public class SplitPaneDemo extends DemoModule {
         divSize.getAccessibleContext().setAccessibleName(getString("SplitPaneDemo.divider_size"));
         divSize.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String  value = ((JTextField)e.getSource()).getText();
+                String value = ((JTextField) e.getSource()).getText();
                 int newSize;
 
                 try {
@@ -178,13 +177,13 @@ public class SplitPaneDemo extends DemoModule {
                 } catch (Exception ex) {
                     newSize = -1;
                 }
-                if(newSize > 0) {
+                if (newSize > 0) {
                     splitPane.setDividerSize(newSize);
                 } else {
                     JOptionPane.showMessageDialog(splitPane,
-                                                  getString("SplitPaneDemo.invalid_divider_size"),
-                                                  getString("SplitPaneDemo.error"),
-                                                  JOptionPane.ERROR_MESSAGE);
+                            getString("SplitPaneDemo.invalid_divider_size"),
+                            getString("SplitPaneDemo.error"),
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -203,22 +202,22 @@ public class SplitPaneDemo extends DemoModule {
         earthSize.getAccessibleContext().setAccessibleName(getString("SplitPaneDemo.first_component_min_size"));
         earthSize.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String           value = ((JTextField)e.getSource()).getText();
-                int              newSize;
+                String value = ((JTextField) e.getSource()).getText();
+                int newSize;
 
                 try {
                     newSize = Integer.parseInt(value);
                 } catch (Exception ex) {
                     newSize = -1;
                 }
-                if(newSize > 10) {
+                if (newSize > 10) {
                     earth.setMinimumSize(new Dimension(newSize, newSize));
                 } else {
                     JOptionPane.showMessageDialog(splitPane,
-                                                  getString("SplitPaneDemo.invalid_min_size") +
-                                                  getString("SplitPaneDemo.must_be_greater_than") + 10,
-                                                  getString("SplitPaneDemo.error"),
-                                                  JOptionPane.ERROR_MESSAGE);
+                            getString("SplitPaneDemo.invalid_min_size")
+                            + getString("SplitPaneDemo.must_be_greater_than") + 10,
+                            getString("SplitPaneDemo.error"),
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -237,22 +236,22 @@ public class SplitPaneDemo extends DemoModule {
         moonSize.getAccessibleContext().setAccessibleName(getString("SplitPaneDemo.second_component_min_size"));
         moonSize.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String           value = ((JTextField)e.getSource()).getText();
-                int              newSize;
+                String value = ((JTextField) e.getSource()).getText();
+                int newSize;
 
                 try {
                     newSize = Integer.parseInt(value);
                 } catch (Exception ex) {
                     newSize = -1;
                 }
-                if(newSize > 10) {
+                if (newSize > 10) {
                     moon.setMinimumSize(new Dimension(newSize, newSize));
                 } else {
                     JOptionPane.showMessageDialog(splitPane,
-                                                  getString("SplitPaneDemo.invalid_min_size") +
-                                                  getString("SplitPaneDemo.must_be_greater_than") + 10,
-                                                  getString("SplitPaneDemo.error"),
-                                                  JOptionPane.ERROR_MESSAGE);
+                            getString("SplitPaneDemo.invalid_min_size")
+                            + getString("SplitPaneDemo.must_be_greater_than") + 10,
+                            getString("SplitPaneDemo.error"),
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

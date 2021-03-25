@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -53,6 +52,7 @@ import java.net.*;
  * @author Jeff Dinkins
  */
 public class TabbedPaneDemo extends DemoModule implements ActionListener {
+
     HeadSpin spin;
 
     JTabbedPane tabbedpane;
@@ -83,10 +83,10 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
         // create tab position controls
         JPanel tabControls = new JPanel();
         tabControls.add(new JLabel(getString("TabbedPaneDemo.label")));
-        top    = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.top")));
-        left   = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.left")));
+        top = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.top")));
+        left = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.left")));
         bottom = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.bottom")));
-        right  = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.right")));
+        right = (JRadioButton) tabControls.add(new JRadioButton(getString("TabbedPaneDemo.right")));
         getDemoPanel().add(tabControls, BorderLayout.NORTH);
 
         group = new ButtonGroup();
@@ -123,30 +123,31 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
         tabbedpane.add(name, spin);
 
         tabbedpane.getModel().addChangeListener(
-           new ChangeListener() {
-              public void stateChanged(ChangeEvent e) {
-                  SingleSelectionModel model = (SingleSelectionModel) e.getSource();
-                  if(model.getSelectedIndex() == tabbedpane.getTabCount()-1) {
-                      spin.go();
-                  }
-              }
-           }
+                new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                SingleSelectionModel model = (SingleSelectionModel) e.getSource();
+                if (model.getSelectedIndex() == tabbedpane.getTabCount() - 1) {
+                    spin.go();
+                }
+            }
+        }
         );
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == top) {
+        if (e.getSource() == top) {
             tabbedpane.setTabPlacement(JTabbedPane.TOP);
-        } else if(e.getSource() == left) {
+        } else if (e.getSource() == left) {
             tabbedpane.setTabPlacement(JTabbedPane.LEFT);
-        } else if(e.getSource() == bottom) {
+        } else if (e.getSource() == bottom) {
             tabbedpane.setTabPlacement(JTabbedPane.BOTTOM);
-        } else if(e.getSource() == right) {
+        } else if (e.getSource() == right) {
             tabbedpane.setTabPlacement(JTabbedPane.RIGHT);
         }
     }
 
     class HeadSpin extends JComponent implements ActionListener {
+
         javax.swing.Timer animator;
 
         ImageIcon icon[] = new ImageIcon[6];
@@ -177,7 +178,7 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
                 x[i] = (double) rand.nextInt(500);
                 y[i] = (double) rand.nextInt(500);
             }
-            */
+             */
         }
 
         public void go() {
@@ -189,8 +190,8 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
             g.setColor(getBackground());
             g.fillRect(0, 0, getWidth(), getHeight());
 
-            for(int i = 0; i < numImages; i++) {
-                if(x[i] > 3*i) {
+            for (int i = 0; i < numImages; i++) {
+                if (x[i] > 3 * i) {
                     nudge(i);
                     squish(g, icon[i], xh[i], yh[i], scale[i]);
                 } else {
@@ -207,23 +208,23 @@ public class TabbedPaneDemo extends DemoModule implements ActionListener {
             y[i] += (double) rand.nextInt(1000) / 5432;
             int tmpScale = (int) (Math.abs(Math.sin(x[i])) * 10);
             scale[i] = (double) tmpScale / 10;
-            int nudgeX = (int) (((double) getWidth()/2) * .8);
-            int nudgeY = (int) (((double) getHeight()/2) * .60);
+            int nudgeX = (int) (((double) getWidth() / 2) * .8);
+            int nudgeY = (int) (((double) getHeight() / 2) * .60);
             xh[i] = (int) (Math.sin(x[i]) * nudgeX) + nudgeX;
             yh[i] = (int) (Math.sin(y[i]) * nudgeY) + nudgeY;
         }
 
         public void squish(Graphics g, ImageIcon icon, int x, int y, double scale) {
-            if(isVisible()) {
+            if (isVisible()) {
                 g.drawImage(icon.getImage(), x, y,
-                            (int) (icon.getIconWidth()*scale),
-                            (int) (icon.getIconHeight()*scale),
-                            this);
+                        (int) (icon.getIconWidth() * scale),
+                        (int) (icon.getIconHeight() * scale),
+                        this);
             }
         }
 
         public void actionPerformed(ActionEvent e) {
-            if(isVisible()) {
+            if (isVisible()) {
                 repaint();
             } else {
                 animator.stop();

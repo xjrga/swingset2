@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.tree.*;
@@ -74,7 +73,7 @@ public class TreeDemo extends DemoModule {
 
     public JScrollPane createTree() {
         DefaultMutableTreeNode top = new DefaultMutableTreeNode(getString("TreeDemo.music"));
-        DefaultMutableTreeNode catagory = null ;
+        DefaultMutableTreeNode catagory = null;
         DefaultMutableTreeNode artist = null;
         DefaultMutableTreeNode record = null;
 
@@ -89,31 +88,31 @@ public class TreeDemo extends DemoModule {
 
             // read one line at a time, put into tree
             String line = reader.readLine();
-            while(line != null) {
+            while (line != null) {
                 // System.out.println("reading in: ->" + line + "<-");
                 char linetype = line.charAt(0);
-                switch(linetype) {
-                   case 'C':
-                     catagory = new DefaultMutableTreeNode(line.substring(2));
-                     top.add(catagory);
-                     break;
-                   case 'A':
-                     if(catagory != null) {
-                         catagory.add(artist = new DefaultMutableTreeNode(line.substring(2)));
-                     }
-                     break;
-                   case 'R':
-                     if(artist != null) {
-                         artist.add(record = new DefaultMutableTreeNode(line.substring(2)));
-                     }
-                     break;
-                   case 'S':
-                     if(record != null) {
-                         record.add(new DefaultMutableTreeNode(line.substring(2)));
-                     }
-                     break;
-                   default:
-                     break;
+                switch (linetype) {
+                    case 'C':
+                        catagory = new DefaultMutableTreeNode(line.substring(2));
+                        top.add(catagory);
+                        break;
+                    case 'A':
+                        if (catagory != null) {
+                            catagory.add(artist = new DefaultMutableTreeNode(line.substring(2)));
+                        }
+                        break;
+                    case 'R':
+                        if (artist != null) {
+                            artist.add(record = new DefaultMutableTreeNode(line.substring(2)));
+                        }
+                        break;
+                    case 'S':
+                        if (record != null) {
+                            record.add(new DefaultMutableTreeNode(line.substring(2)));
+                        }
+                        break;
+                    default:
+                        break;
                 }
                 line = reader.readLine();
             }
@@ -122,7 +121,7 @@ public class TreeDemo extends DemoModule {
 
         tree = new JTree(top) {
             public Insets getInsets() {
-                return new Insets(5,5,5,5);
+                return new Insets(5, 5, 5, 5);
             }
         };
 

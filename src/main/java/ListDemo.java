@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -48,17 +47,16 @@ import java.applet.*;
 import java.net.*;
 
 /**
- * List Demo. This demo shows that it is not
- * always necessary to have an array of objects
- * as big as the size of the list stored.
+ * List Demo. This demo shows that it is not always necessary to have an array
+ * of objects as big as the size of the list stored.
  *
- * Indeed, in this example, there is no array
- * kept for the list data, rather it is generated
- * on the fly as only those elements are needed.
+ * Indeed, in this example, there is no array kept for the list data, rather it
+ * is generated on the fly as only those elements are needed.
  *
  * @author Jeff Dinkins
  */
 public class ListDemo extends DemoModule {
+
     JList list;
 
     JPanel prefixList;
@@ -181,6 +179,7 @@ public class ListDemo extends DemoModule {
     public JPanel createControlPanel() {
         JPanel controlPanel = new JPanel() {
             Insets insets = new Insets(0, 4, 10, 10);
+
             public Insets getInsets() {
                 return insets;
             }
@@ -197,6 +196,7 @@ public class ListDemo extends DemoModule {
 
         prefixList = new JPanel() {
             Insets insets = new Insets(0, 4, 0, 0);
+
             public Insets getInsets() {
                 return insets;
             }
@@ -209,6 +209,7 @@ public class ListDemo extends DemoModule {
 
         suffixList = new JPanel() {
             Insets insets = new Insets(0, 4, 0, 0);
+
             public Insets getInsets() {
                 return insets;
             }
@@ -227,48 +228,50 @@ public class ListDemo extends DemoModule {
 
     private FocusListener listFocusListener = new FocusAdapter() {
         public void focusGained(FocusEvent e) {
-            JComponent c = (JComponent)e.getComponent();
+            JComponent c = (JComponent) e.getComponent();
             c.scrollRectToVisible(new Rectangle(0, 0, c.getWidth(), c.getHeight()));
         }
     };
 
     public void addPrefix(String prefix, boolean selected) {
-        if(prefixAction == null) {
+        if (prefixAction == null) {
             prefixAction = new UpdatePrefixListAction(listModel);
         }
         final JCheckBox cb = (JCheckBox) prefixList.add(new JCheckBox(prefix));
         checkboxes.addElement(cb);
         cb.setSelected(selected);
         cb.addActionListener(prefixAction);
-        if(selected) {
+        if (selected) {
             listModel.addPrefix(prefix);
         }
         cb.addFocusListener(listFocusListener);
     }
 
     public void addSuffix(String suffix, boolean selected) {
-        if(suffixAction == null) {
+        if (suffixAction == null) {
             suffixAction = new UpdateSuffixListAction(listModel);
         }
         final JCheckBox cb = (JCheckBox) suffixList.add(new JCheckBox(suffix));
         checkboxes.addElement(cb);
         cb.setSelected(selected);
         cb.addActionListener(suffixAction);
-        if(selected) {
+        if (selected) {
             listModel.addSuffix(suffix);
         }
         cb.addFocusListener(listFocusListener);
     }
 
     class UpdatePrefixListAction extends AbstractAction {
+
         GeneratedListModel listModel;
+
         protected UpdatePrefixListAction(GeneratedListModel listModel) {
             this.listModel = listModel;
         }
 
         public void actionPerformed(ActionEvent e) {
             JCheckBox cb = (JCheckBox) e.getSource();
-            if(cb.isSelected()) {
+            if (cb.isSelected()) {
                 listModel.addPrefix(cb.getText());
             } else {
                 listModel.removePrefix(cb.getText());
@@ -277,14 +280,16 @@ public class ListDemo extends DemoModule {
     }
 
     class UpdateSuffixListAction extends AbstractAction {
+
         GeneratedListModel listModel;
+
         protected UpdateSuffixListAction(GeneratedListModel listModel) {
             this.listModel = listModel;
         }
 
         public void actionPerformed(ActionEvent e) {
             JCheckBox cb = (JCheckBox) e.getSource();
-            if(cb.isSelected()) {
+            if (cb.isSelected()) {
                 listModel.addSuffix(cb.getText());
             } else {
                 listModel.removeSuffix(cb.getText());
@@ -292,15 +297,15 @@ public class ListDemo extends DemoModule {
         }
     }
 
-
     class GeneratedListModel extends AbstractListModel {
+
         ListDemo demo;
         Permuter permuter;
 
         public Vector prefix = new Vector();
         public Vector suffix = new Vector();
 
-        public GeneratedListModel (ListDemo demo) {
+        public GeneratedListModel(ListDemo demo) {
             this.demo = demo;
         }
 
@@ -310,7 +315,7 @@ public class ListDemo extends DemoModule {
         }
 
         public void addPrefix(String s) {
-            if(!prefix.contains(s)) {
+            if (!prefix.contains(s)) {
                 prefix.addElement(s);
                 update();
             }
@@ -322,7 +327,7 @@ public class ListDemo extends DemoModule {
         }
 
         public void addSuffix(String s) {
-            if(!suffix.contains(s)) {
+            if (!suffix.contains(s)) {
                 suffix.addElement(s);
                 update();
             }
@@ -338,7 +343,7 @@ public class ListDemo extends DemoModule {
         }
 
         public Object getElementAt(int index) {
-            if(permuter == null) {
+            if (permuter == null) {
                 update();
             }
             // morph the index to another int -- this has the benefit of
@@ -346,33 +351,34 @@ public class ListDemo extends DemoModule {
             int j = permuter.map(index);
             int ps = prefix.size();
             int ss = suffix.size();
-            return (String) prefix.elementAt(j%ps) + (String) suffix.elementAt((j/ps)%ss);
+            return (String) prefix.elementAt(j % ps) + (String) suffix.elementAt((j / ps) % ss);
         }
     }
 
     ImageIcon images[] = new ImageIcon[7];
+
     void loadImages() {
-            images[0] = createImageIcon("list/red.gif",  getString("ListDemo.red"));
-            images[1] = createImageIcon("list/blue.gif",  getString("ListDemo.blue"));
-            images[2] = createImageIcon("list/yellow.gif",  getString("ListDemo.yellow"));
-            images[3] = createImageIcon("list/green.gif",  getString("ListDemo.green"));
-            images[4] = createImageIcon("list/gray.gif",  getString("ListDemo.gray"));
-            images[5] = createImageIcon("list/cyan.gif",  getString("ListDemo.cyan"));
-            images[6] = createImageIcon("list/magenta.gif",  getString("ListDemo.magenta"));
+        images[0] = createImageIcon("list/red.gif", getString("ListDemo.red"));
+        images[1] = createImageIcon("list/blue.gif", getString("ListDemo.blue"));
+        images[2] = createImageIcon("list/yellow.gif", getString("ListDemo.yellow"));
+        images[3] = createImageIcon("list/green.gif", getString("ListDemo.green"));
+        images[4] = createImageIcon("list/gray.gif", getString("ListDemo.gray"));
+        images[5] = createImageIcon("list/cyan.gif", getString("ListDemo.cyan"));
+        images[6] = createImageIcon("list/magenta.gif", getString("ListDemo.magenta"));
     }
 
     class CompanyLogoListCellRenderer extends DefaultListCellRenderer {
-       public Component getListCellRendererComponent(
-            JList list,
-            Object value,
-            int index,
-            boolean isSelected,
-            boolean cellHasFocus)
-        {
+
+        public Component getListCellRendererComponent(
+                JList list,
+                Object value,
+                int index,
+                boolean isSelected,
+                boolean cellHasFocus) {
             Component retValue = super.getListCellRendererComponent(
-                list, value, index, isSelected, cellHasFocus
+                    list, value, index, isSelected, cellHasFocus
             );
-            setIcon(images[index%7]);
+            setIcon(images[index % 7]);
             return retValue;
         }
     }

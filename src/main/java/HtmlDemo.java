@@ -30,7 +30,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -86,7 +85,7 @@ public class HtmlDemo extends DemoModule {
                 url = null;
             }
 
-            if(url != null) {
+            if (url != null) {
                 html = new JEditorPane(url);
                 html.setEditable(false);
                 html.addHyperlinkListener(createHyperLinkListener());
@@ -108,8 +107,8 @@ public class HtmlDemo extends DemoModule {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     if (e instanceof HTMLFrameHyperlinkEvent) {
-                        ((HTMLDocument)html.getDocument()).processHTMLFrameHyperlinkEvent(
-                            (HTMLFrameHyperlinkEvent)e);
+                        ((HTMLDocument) html.getDocument()).processHTMLFrameHyperlinkEvent(
+                                (HTMLFrameHyperlinkEvent) e);
                     } else {
                         try {
                             html.setPage(e.getURL());
