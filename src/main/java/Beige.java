@@ -22,7 +22,6 @@ public class Beige extends MetalTheme {
     public final Color E = new Color(0x9ba068);
     public final Color F = new Color(0xe0d5c1);
     
-
     /*
      * Beige Theme 
      * @author Jorge R Garcia de Alba     
