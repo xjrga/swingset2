@@ -6,9 +6,9 @@
     mvn package
     
     To run:
-    cp target/SwingSet2-00.jar ./
-    java -jar SwingSet2-00.jar
+    cp target/SwingSet2-01.jar ./
+    java -jar SwingSet2-01.jar
 
-    * Maven src directory must be in same directory as SwingSet2-00.jar for 
-      program to see source code files
+    * Maven src directory must be in same directory as SwingSet2-01.jar for 
+      program to see source code files and fonts. 
     

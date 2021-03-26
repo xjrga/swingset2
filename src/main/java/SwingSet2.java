@@ -30,6 +30,14 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+import org.xjrga.looks.Gold;
+import org.xjrga.looks.Khaki;
+import org.xjrga.looks.Bronze;
+import org.xjrga.looks.Green;
+import org.xjrga.looks.Silver;
+import org.xjrga.looks.Mars;
+import org.xjrga.looks.Arch;
+import org.xjrga.looks.Pink;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.border.*;

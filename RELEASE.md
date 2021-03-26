@@ -5,4 +5,8 @@ RELEASE NOTES
 00
 
     Add Dark Metal and Pink Theme
+    
+01 
+    Add Khaki, Arch, Green, Bronze, Silver, Gold and Mars Theme
+    Add new fonts
 

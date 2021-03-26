@@ -1,33 +1,34 @@
+package org.xjrga.looks;
+
 
 import java.awt.Color;
-import java.awt.Font;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
+/*
+ * Khaki Theme 
+ * @author Jorge R Garcia de Alba     
+ */
 public class Khaki extends MetalTheme {
 
-    private FontUIResource font;
-    private ColorUIResource primary1;
-    private ColorUIResource primary2;
-    private ColorUIResource primary3;
-    private ColorUIResource secondary1;
-    private ColorUIResource secondary2;
-    private ColorUIResource secondary3;
+    private final FontUIResource font;
+    private final ColorUIResource primary1;
+    private final ColorUIResource primary2;
+    private final ColorUIResource primary3;
+    private final ColorUIResource secondary1;
+    private final ColorUIResource secondary2;
+    private final ColorUIResource secondary3;
     public final Color A = new Color(0xac5c2c);
     public final Color B = new Color(0xc8a353);
     public final Color C = new Color(0x281924);
     public final Color D = new Color(0x897846);
     public final Color E = new Color(0x9ba068);
     public final Color F = new Color(0xe0d5c1);
-
-    /*
-     * Khaki Theme 
-     * @author Jorge R Garcia de Alba     
-     */
+    
     public Khaki() {
-        font = new FontUIResource("Dialog", Font.PLAIN, 13);
+        font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.F);
         secondary2 = new ColorUIResource(this.F);
         primary1 = new ColorUIResource(this.C);

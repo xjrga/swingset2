@@ -1,38 +1,39 @@
+package org.xjrga.looks;
+
 
 import java.awt.Color;
-import java.awt.Font;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
-public class Green extends MetalTheme {
+/*
+ * Arch Theme 
+ * @author Jorge R Garcia de Alba     
+ */
+public class Arch extends MetalTheme {
 
-    private FontUIResource font;
-    private ColorUIResource primary1;
-    private ColorUIResource primary2;
-    private ColorUIResource primary3;
-    private ColorUIResource secondary1;
-    private ColorUIResource secondary2;
-    private ColorUIResource secondary3;
-    public final Color LIGHTGREEN = new Color(0x87bc92);
-    public final Color MEDIUMGREEN = new Color(0x5c8c4e);
-    public final Color YELLOW = new Color(0xdcad3b);
-    public final Color BLUE = new Color(0x2e88aa);
-    public final Color DARKGREEN = new Color(0x3d4335);
-
-    /*
-     * Green Theme 
-     * @author Jorge R Garcia de Alba     
-     */
-    public Green() {
-        font = new FontUIResource("Dialog", Font.PLAIN, 13);
-        secondary2 = new ColorUIResource(this.LIGHTGREEN);
-        primary1 = new ColorUIResource(this.DARKGREEN);
-        secondary1 = new ColorUIResource(this.MEDIUMGREEN);
-        primary2 = new ColorUIResource(this.BLUE);
-        primary3 = new ColorUIResource(this.YELLOW);
-        secondary3 = new ColorUIResource(this.LIGHTGREEN);
+    private final FontUIResource font;
+    private final ColorUIResource primary1;
+    private final ColorUIResource primary2;
+    private final ColorUIResource primary3;
+    private final ColorUIResource secondary1;
+    private final ColorUIResource secondary2;
+    private final ColorUIResource secondary3;
+    public final Color PINK = new Color(0xf8b1d3);
+    public final Color ORANGE = new Color(0xd74b28);
+    public final Color PURPLE = new Color(0x83534f);
+    public final Color WHITE = new Color(0xf0f1eb);
+    public final Color BLUE = new Color(0x8894ac);
+  
+    public Arch() {
+        font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
+        secondary3 = new ColorUIResource(this.WHITE);
+        secondary2 = new ColorUIResource(this.WHITE);
+        primary1 = new ColorUIResource(this.PURPLE);
+        secondary1 = new ColorUIResource(this.PURPLE);
+        primary2 = new ColorUIResource(this.PINK);
+        primary3 = new ColorUIResource(this.ORANGE);
     }
 
     @Override
@@ -42,7 +43,7 @@ public class Green extends MetalTheme {
 
     @Override
     public String getName() {
-        return "Green";
+        return "Arch";
     }
 
     @Override

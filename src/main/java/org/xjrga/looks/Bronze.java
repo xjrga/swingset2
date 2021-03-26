@@ -1,12 +1,17 @@
+package org.xjrga.looks;
+
 
 import java.awt.Color;
-import java.awt.Font;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
-public class Gold extends MetalTheme {
+/*
+ * Bronze Theme 
+ * @author Jorge R Garcia de Alba     
+ */
+public class Bronze extends MetalTheme {
 
     private final FontUIResource font;
     private final ColorUIResource primary1;
@@ -15,24 +20,20 @@ public class Gold extends MetalTheme {
     private final ColorUIResource secondary1;
     private final ColorUIResource secondary2;
     private final ColorUIResource secondary3;
-    private final Color COLOR00 = new Color(0xffd242);
-    private final Color COLOR10 = new Color(0xe6bd3c);
-    private final Color COLOR20 = new Color(0xcca835);
-    private final Color COLOR30 = new Color(0xb3932e);
-    private final Color COLOR40 = new Color(0x997e28);
-    private final Color COLOR50 = new Color(0x806921);
-    private final Color COLOR60 = new Color(0x66541a);
-    private final Color COLOR70 = new Color(0x4d3f14);
-    private final Color COLOR80 = new Color(0x332a0d);
-    private final Color COLOR90 = new Color(0x191507);
+    private final Color COLOR00 = new Color(0xffcc7e);
+    private final Color COLOR10 = new Color(0xe6b871);
+    private final Color COLOR20 = new Color(0xcca365);
+    private final Color COLOR30 = new Color(0xb38f58);
+    private final Color COLOR40 = new Color(0x997b4c);
+    private final Color COLOR50 = new Color(0x80663f);
+    private final Color COLOR60 = new Color(0x665232);
+    private final Color COLOR70 = new Color(0x4d3d26);
+    private final Color COLOR80 = new Color(0x332919);
+    private final Color COLOR90 = new Color(0x19140d);
     private final Color COLOR100 = new Color(0x000000);
-
-    /*
-     * Gold Theme 
-     * @author Jorge R Garcia de Alba     
-     */
-    public Gold() {
-        font = new FontUIResource("Dialog", Font.PLAIN, 13);
+    
+    public Bronze() {
+        font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.COLOR40);
         secondary2 = new ColorUIResource(this.COLOR40);
         primary3 = new ColorUIResource(this.COLOR20);
@@ -48,7 +49,7 @@ public class Gold extends MetalTheme {
 
     @Override
     public String getName() {
-        return "Gold";
+        return "Bronze";
     }
 
     @Override
