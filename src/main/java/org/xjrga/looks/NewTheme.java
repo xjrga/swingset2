@@ -50,7 +50,7 @@ public class NewTheme extends MetalTheme {
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
         
-        primary3 = new ColorUIResource(this.COLOR10);
+        primary3 = new ColorUIResource(this.COLOR30);
         //selected window, selected menuitem box, tree component
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
