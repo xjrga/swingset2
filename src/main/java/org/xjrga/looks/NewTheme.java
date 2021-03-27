@@ -61,7 +61,7 @@ public class NewTheme extends MetalTheme {
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
 
-        primary1 = new ColorUIResource(this.COLOR00);
+        primary1 = new ColorUIResource(this.COLOR50);
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
