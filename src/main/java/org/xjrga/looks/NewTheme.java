@@ -25,6 +25,7 @@ public class NewTheme extends MetalTheme {
     private final Color COLOR10 = new Color(0xe2e0e6);
     private final Color COLOR20 = new Color(0xc8c7cc);
     private final Color COLOR30 = new Color(0xafaeb3);
+    private final Color COLOR35 = new Color(0xa2a1a6);
     private final Color COLOR40 = new Color(0x969599);
     private final Color COLOR50 = new Color(0x7d7d80);
     private final Color COLOR60 = new Color(0x646466);
@@ -43,7 +44,7 @@ public class NewTheme extends MetalTheme {
         secondary3 = new ColorUIResource(this.COLOR40);
         //app, menu background, selected tab        
 
-        secondary2 = new ColorUIResource(this.COLOR30);
+        secondary2 = new ColorUIResource(this.COLOR35);
         //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
         //slider disabled ticks, slider internal track, titled border outline,
