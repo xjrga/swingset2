@@ -51,6 +51,11 @@ public class NewTheme extends MetalTheme {
         //slider disabled ticks, slider internal track, titled border outline,
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
+
+        primary1 = new ColorUIResource(this.COLOR00);
+        //scrollbar knob outline and dots, folder tab, 
+        //selected iframe outline and dots, tooltip outline,
+        //slider knob dots
         
         primary3 = new ColorUIResource(this.COLOR10);
         //selected window, selected menuitem box, tree component
@@ -62,12 +67,7 @@ public class NewTheme extends MetalTheme {
         //internal frame background, component focus
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
-
-        primary1 = new ColorUIResource(this.COLOR00);
-        //scrollbar knob outline and dots, folder tab, 
-        //selected iframe outline and dots, tooltip outline,
-        //slider knob dots
-
+       
         secondary1 = new ColorUIResource(this.COLOR30);
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines
