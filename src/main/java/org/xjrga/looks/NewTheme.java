@@ -3,6 +3,7 @@ package org.xjrga.looks;
 
 import java.awt.Color;
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
@@ -38,14 +39,15 @@ public class NewTheme extends MetalTheme {
         //font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));        
         //font = new FontUIResource(TheFonts.getUbuntuMono(Float.valueOf(13)));
+        
         secondary3 = new ColorUIResource(this.COLOR50);
         //app, menu background, selected tab        
 
         secondary2 = new ColorUIResource(this.COLOR50);
         //unselected tab, iframes side lines, selected button,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
-        //slider disabled ticks
-
+        //slider disabled ticks, slider internal track
+        
         primary3 = new ColorUIResource(this.COLOR20);
         //selected window, selected menuitem box, tree component
         //selected window top bar, scrollbar knob left outline, tooltip, 
@@ -57,7 +59,7 @@ public class NewTheme extends MetalTheme {
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
 
-        primary1 = new ColorUIResource(this.COLOR00);
+        primary1 = new ColorUIResource(this.COLOR10);
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
@@ -65,16 +67,12 @@ public class NewTheme extends MetalTheme {
         secondary1 = new ColorUIResource(this.COLOR40);
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines
-
-        
     }
 
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        //UIManager.put("TabbedPane.focus", colorUIResource2);
-        //UIManager.put("TabbedPane.selected", colorUIResource2);
-        //UIManager.put("Button.select", this.COLOR80);
+        //UIManager.put("TabbedPane.background", this.COLOR50);
     }
 
     @Override
