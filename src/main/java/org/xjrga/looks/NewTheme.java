@@ -24,6 +24,7 @@ public class NewTheme extends MetalTheme {
     private final Color COLOR00 = new Color(0xfbf9ff);
     private final Color COLOR10 = new Color(0xe2e0e6);
     private final Color COLOR20 = new Color(0xc8c7cc);
+    private final Color COLOR25 = new Color(0xbbbabf);
     private final Color COLOR30 = new Color(0xafaeb3);
     private final Color COLOR35 = new Color(0xa2a1a6);
     private final Color COLOR40 = new Color(0x969599);
@@ -51,7 +52,7 @@ public class NewTheme extends MetalTheme {
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
         
-        primary3 = new ColorUIResource(this.COLOR30);
+        primary3 = new ColorUIResource(this.COLOR25);
         //selected window, selected menuitem box, tree component
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
