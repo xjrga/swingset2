@@ -40,33 +40,33 @@ public class NewTheme extends MetalTheme {
         //font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));        
         //font = new FontUIResource(TheFonts.getUbuntuMono(Float.valueOf(13)));
         
-        secondary3 = new ColorUIResource(this.COLOR50);
+        secondary3 = new ColorUIResource(this.COLOR40);
         //app, menu background, selected tab        
 
-        secondary2 = new ColorUIResource(this.COLOR50);
+        secondary2 = new ColorUIResource(this.COLOR40);
         //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
         //slider disabled ticks, slider internal track, titled border outline,
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
         
-        primary3 = new ColorUIResource(this.COLOR20);
+        primary3 = new ColorUIResource(this.COLOR10);
         //selected window, selected menuitem box, tree component
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
         //folders, table row selection, selected tree item
         
-        primary2 = new ColorUIResource(this.COLOR30);//
+        primary2 = new ColorUIResource(this.COLOR20);//
         //internal frame background, component focus
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
 
-        primary1 = new ColorUIResource(this.COLOR10);
+        primary1 = new ColorUIResource(this.COLOR00);
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
 
-        secondary1 = new ColorUIResource(this.COLOR40);
+        secondary1 = new ColorUIResource(this.COLOR30);
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines
     }
