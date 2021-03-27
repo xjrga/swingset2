@@ -51,6 +51,7 @@ import java.lang.reflect.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import org.xjrga.looks.NewTheme;
 
 /**
  * A demo that shows all of the Swing components.
@@ -430,6 +431,9 @@ public class SwingSet2 extends JPanel {
             
             createThemesMenuItem(themesMenu, "ThemesMenu.mars_label", "ThemesMenu.mars_mnemonic",
                     "ThemesMenu.mars_accessible_description", new Mars());
+            
+            createThemesMenuItem(themesMenu, "ThemesMenu.newtheme_label", "ThemesMenu.newtheme_mnemonic",
+                    "ThemesMenu.newtheme_accessible_description", new NewTheme());
 
             // Enable theme menu based on L&F
             themesMenu.setEnabled("Metal".equals(currentLookAndFeel.name));
