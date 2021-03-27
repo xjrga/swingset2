@@ -43,7 +43,7 @@ public class NewTheme extends MetalTheme {
         secondary3 = new ColorUIResource(this.COLOR40);
         //app, menu background, selected tab        
 
-        secondary2 = new ColorUIResource(this.COLOR40);
+        secondary2 = new ColorUIResource(this.COLOR30);
         //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
         //slider disabled ticks, slider internal track, titled border outline,
@@ -74,7 +74,8 @@ public class NewTheme extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        //UIManager.put("TabbedPane.background", this.COLOR50);
+        UIManager.put("TabbedPane.background", this.COLOR40);
+        UIManager.put("TabbedPane.selected", this.COLOR30);        
     }
 
     @Override
