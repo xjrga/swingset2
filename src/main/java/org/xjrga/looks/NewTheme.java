@@ -44,9 +44,11 @@ public class NewTheme extends MetalTheme {
         //app, menu background, selected tab        
 
         secondary2 = new ColorUIResource(this.COLOR50);
-        //unselected tab, iframes side lines, selected button,scrollbar outline
+        //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
-        //slider disabled ticks, slider internal track
+        //slider disabled ticks, slider internal track, titled border outline,
+        //pressed button, selected toolbar button, filechooser file background,
+        //disabled text
         
         primary3 = new ColorUIResource(this.COLOR20);
         //selected window, selected menuitem box, tree component
