@@ -23,6 +23,7 @@ public class NewTheme extends MetalTheme {
     private final ColorUIResource secondary3;
     private final Color COLOR00 = new Color(0xfbf9ff);
     private final Color COLOR10 = new Color(0xe2e0e6);
+    private final Color COLOR15 = new Color(0xd4d3d9);
     private final Color COLOR20 = new Color(0xc8c7cc);
     private final Color COLOR25 = new Color(0xbbbabf);
     private final Color COLOR30 = new Color(0xafaeb3);
@@ -52,7 +53,7 @@ public class NewTheme extends MetalTheme {
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
 
-        primary1 = new ColorUIResource(this.COLOR00);
+        primary1 = new ColorUIResource(this.COLOR30);
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
@@ -63,7 +64,7 @@ public class NewTheme extends MetalTheme {
         //selected list item, selected slider knob highlight,
         //folders, table row selection, selected tree item
         
-        primary2 = new ColorUIResource(this.COLOR25);//
+        primary2 = new ColorUIResource(this.COLOR20);//
         //internal frame background, component focus
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
