@@ -36,9 +36,9 @@ public class NewTheme extends MetalTheme {
     private final Color COLOR100 = new Color(0x000000);
    
     public NewTheme() {
-        font = new FontUIResource(TheFonts.getLiberationMono(Float.valueOf(13)));
+        //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
-        //font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
+        font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));        
         //font = new FontUIResource(TheFonts.getUbuntuMono(Float.valueOf(13)));
         
@@ -63,7 +63,7 @@ public class NewTheme extends MetalTheme {
         //selected list item, selected slider knob highlight,
         //folders, table row selection, selected tree item
         
-        primary2 = new ColorUIResource(this.COLOR20);//
+        primary2 = new ColorUIResource(this.COLOR25);//
         //internal frame background, component focus
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
@@ -76,7 +76,7 @@ public class NewTheme extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        UIManager.put("TabbedPane.selected", this.COLOR30);        
+        UIManager.put("TabbedPane.selected", this.COLOR30);      
         UIManager.put("TabbedPane.background", secondary3);        
     }
 
