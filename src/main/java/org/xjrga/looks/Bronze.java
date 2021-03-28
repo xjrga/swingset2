@@ -1,6 +1,5 @@
 package org.xjrga.looks;
 
-
 import java.awt.Color;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
@@ -31,7 +30,7 @@ public class Bronze extends MetalTheme {
     private final Color COLOR80 = new Color(0x332919);
     private final Color COLOR90 = new Color(0x19140d);
     private final Color COLOR100 = new Color(0x000000);
-    
+
     public Bronze() {
         font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.COLOR40);

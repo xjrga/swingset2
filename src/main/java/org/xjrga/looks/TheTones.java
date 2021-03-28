@@ -15,15 +15,15 @@ public class TheTones {
 
     private final double c;
     private final double m;
-    private final double y;       
+    private final double y;
 
     public TheTones(double c, double m, double y) {
         this.c = c;
         this.m = m;
-        this.y = y;              
+        this.y = y;
     }
 
-    public Color get00() {        
+    public Color get00() {
         return getColorTone(0);
     }
 
@@ -34,7 +34,7 @@ public class TheTones {
     public Color get10() {
         return getColorTone(10);
     }
-       
+
     public Color get15() {
         return getColorTone(15);
     }
@@ -55,7 +55,7 @@ public class TheTones {
         return getColorTone(35);
     }
 
-   public Color get40() {        
+    public Color get40() {
         return getColorTone(40);
     }
 

@@ -40,7 +40,7 @@ public class NewTheme extends MetalTheme {
     private TheTones colorFactory = null;
 
     public NewTheme() {
-        colorFactory = new TheTones(2,3,0);
+        colorFactory = new TheTones(2, 3, 0);
         COLOR10 = colorFactory.get10();
         COLOR15 = colorFactory.get15();
         COLOR20 = colorFactory.get20();

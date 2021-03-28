@@ -1,6 +1,5 @@
 package org.xjrga.looks;
 
-
 import java.awt.Color;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
@@ -25,7 +24,7 @@ public class Green extends MetalTheme {
     public final Color YELLOW = new Color(0xdcad3b);
     public final Color BLUE = new Color(0x2e88aa);
     public final Color DARKGREEN = new Color(0x3d4335);
-  
+
     public Green() {
         font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         secondary2 = new ColorUIResource(this.LIGHTGREEN);

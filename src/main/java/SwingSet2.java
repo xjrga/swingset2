@@ -428,10 +428,10 @@ public class SwingSet2 extends JPanel {
 
             createThemesMenuItem(themesMenu, "ThemesMenu.gold_label", "ThemesMenu.gold_mnemonic",
                     "ThemesMenu.gold_accessible_description", new Gold());
-            
+
             createThemesMenuItem(themesMenu, "ThemesMenu.mars_label", "ThemesMenu.mars_mnemonic",
                     "ThemesMenu.mars_accessible_description", new Mars());
-            
+
             createThemesMenuItem(themesMenu, "ThemesMenu.newtheme_label", "ThemesMenu.newtheme_mnemonic",
                     "ThemesMenu.newtheme_accessible_description", new NewTheme());
 
