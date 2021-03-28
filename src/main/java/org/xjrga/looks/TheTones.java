@@ -11,19 +11,16 @@ import java.awt.Color;
  *
  * @author jr
  */
-public class ColorTone {
+public class TheTones {
 
     private final double c;
     private final double m;
-    private final double y;
-    private double k;
-    private CMYKToRGB color = null;
+    private final double y;       
 
-    public ColorTone(double c, double m, double y) {
+    public TheTones(double c, double m, double y) {
         this.c = c;
         this.m = m;
-        this.y = y;
-        this.k = 0;        
+        this.y = y;              
     }
 
     public Color get00() {        
@@ -61,7 +58,6 @@ public class ColorTone {
    public Color get40() {        
         return getColorTone(40);
     }
-
 
     public Color get45() {
         return getColorTone(45);
@@ -112,7 +108,7 @@ public class ColorTone {
     }
 
     private Color getColorTone(double k) {
-        color = new CMYKToRGB(c, m, y, k);
+        CMYKToRGB color = new CMYKToRGB(c, m, y, k);
         return new Color(color.getRed(), color.getGreen(), color.getBlue());
     }
 }

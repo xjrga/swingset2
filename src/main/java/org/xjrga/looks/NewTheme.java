@@ -37,11 +37,10 @@ public class NewTheme extends MetalTheme {
     private final Color COLOR80 = null;
     private final Color COLOR90 = null;
     private final Color COLOR100 = null;
-    private ColorTone colorFactory = null;
+    private TheTones colorFactory = null;
 
     public NewTheme() {
-
-        colorFactory = new ColorTone(2,3,0);
+        colorFactory = new TheTones(2,3,0);
         COLOR10 = colorFactory.get10();
         COLOR15 = colorFactory.get15();
         COLOR20 = colorFactory.get20();
@@ -49,7 +48,6 @@ public class NewTheme extends MetalTheme {
         COLOR30 = colorFactory.get30();
         COLOR35 = colorFactory.get35();
         COLOR40 = colorFactory.get40();
-
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
