@@ -22,63 +22,42 @@ public class NewTheme extends MetalTheme {
     private final ColorUIResource primary3;
     private final ColorUIResource secondary1;
     private final ColorUIResource secondary2;
-    private final ColorUIResource secondary3;
-    private final Color COLOR00 = null;
-    private Color COLOR10 = null;
-    private Color COLOR15 = null;
-    private Color COLOR20 = null;
-    private Color COLOR25 = null;
-    private Color COLOR30 = null;
-    private Color COLOR35 = null;
-    private Color COLOR40 = null;
-    private final Color COLOR50 = null;
-    private final Color COLOR60 = null;
-    private final Color COLOR70 = null;
-    private final Color COLOR80 = null;
-    private final Color COLOR90 = null;
-    private final Color COLOR100 = null;
-    private TheTones colorFactory = null;
+    private final ColorUIResource secondary3;   
+    private TheTones color = null;
 
     public NewTheme() {
-        colorFactory = new TheTones(2, 3, 0);
-        COLOR10 = colorFactory.get10();
-        COLOR15 = colorFactory.get15();
-        COLOR20 = colorFactory.get20();
-        COLOR25 = colorFactory.get25();
-        COLOR30 = colorFactory.get30();
-        COLOR35 = colorFactory.get35();
-        COLOR40 = colorFactory.get40();
+        color = new TheTones(2, 3, 0);        
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));        
         //font = new FontUIResource(TheFonts.getUbuntuMono(Float.valueOf(13)));
 
-        secondary3 = new ColorUIResource(this.COLOR40);
+        secondary3 = new ColorUIResource(color.get40());
         //app, menu background, selected tab
 
-        secondary2 = new ColorUIResource(this.COLOR35);
+        secondary2 = new ColorUIResource(color.get35());
         //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
         //slider disabled ticks, slider internal track, titled border outline,
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
 
-        primary1 = new ColorUIResource(this.COLOR30);
+        primary1 = new ColorUIResource(color.get30());
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
 
-        secondary1 = new ColorUIResource(this.COLOR30);
+        secondary1 = new ColorUIResource(color.get30());
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines
 
-        primary2 = new ColorUIResource(this.COLOR20);//
+        primary2 = new ColorUIResource(color.get20());//
         //internal frame background, component focus
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
 
-        primary3 = new ColorUIResource(this.COLOR10);
+        primary3 = new ColorUIResource(color.get10());
         //selected window, selected menuitem box, tree component
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
