@@ -22,26 +22,34 @@ public class NewTheme extends MetalTheme {
     private final ColorUIResource primary3;
     private final ColorUIResource secondary1;
     private final ColorUIResource secondary2;
-    private final ColorUIResource secondary3;    
+    private final ColorUIResource secondary3;
     private final Color COLOR00 = null;
-    private final Color COLOR10 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.10f}, 1f);
-    private final Color COLOR15 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.15f}, 1f);
-    private final Color COLOR20 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.20f}, 1f);
-    private final Color COLOR25 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.25f}, 1f);
-    private final Color COLOR30 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.30f}, 1f);
-    private final Color COLOR35 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.35f}, 1f);
-    //private final Color COLOR40 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.40f}, 1f);
-    private final Color COLOR40;
-    private final Color COLOR50 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.50f}, 1f);
-    private final Color COLOR60 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.60f}, 1f);
-    private final Color COLOR70 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.70f}, 1f);
-    private final Color COLOR80 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.80f}, 1f);
-    private final Color COLOR90 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 0.90f}, 1f);
-    private final Color COLOR100 = new Color(ColorSpace.getInstance(ColorSpace.CS_sRGB), new float[] { 0.68f, 0.68f, 0.70f, 1.00f}, 1f);
-    
-    public NewTheme() {      
-        CMYKToRGB color = new CMYKToRGB(0,43,63,30);
-        COLOR40 = new ColorTone(0,43,63).get40();
+    private Color COLOR10 = null;
+    private Color COLOR15 = null;
+    private Color COLOR20 = null;
+    private Color COLOR25 = null;
+    private Color COLOR30 = null;
+    private Color COLOR35 = null;
+    private Color COLOR40 = null;
+    private final Color COLOR50 = null;
+    private final Color COLOR60 = null;
+    private final Color COLOR70 = null;
+    private final Color COLOR80 = null;
+    private final Color COLOR90 = null;
+    private final Color COLOR100 = null;
+    private ColorTone colorFactory = null;
+
+    public NewTheme() {
+
+        colorFactory = new ColorTone(2,3,0);
+        COLOR10 = colorFactory.get10();
+        COLOR15 = colorFactory.get15();
+        COLOR20 = colorFactory.get20();
+        COLOR25 = colorFactory.get25();
+        COLOR30 = colorFactory.get30();
+        COLOR35 = colorFactory.get35();
+        COLOR40 = colorFactory.get40();
+
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
