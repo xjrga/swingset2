@@ -67,8 +67,8 @@ public class NewTheme extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        //UIManager.put("TabbedPane.selected", this.COLOR30);
-        //UIManager.put("TabbedPane.background", secondary3);
+        UIManager.put("TabbedPane.selected", color.get30());
+        UIManager.put("TabbedPane.background", color.get40());
     }
 
     @Override
