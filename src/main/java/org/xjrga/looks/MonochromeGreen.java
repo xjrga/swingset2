@@ -26,11 +26,11 @@ public class MonochromeGreen extends MetalTheme {
         colorTones = new ColorTones(new Color(112, 173, 157));        
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
         primary1 = new ColorUIResource(colorTones.plus10());
-        primary2 = new ColorUIResource(colorTones.plus35());
+        primary2 = new ColorUIResource(colorTones.plus30());
         primary3 = new ColorUIResource(colorTones.plus40());
         secondary3 = new ColorUIResource(colorTones.plus0());
         secondary1 = new ColorUIResource(colorTones.plus0());
-        secondary2 = new ColorUIResource(colorTones.plus15());      
+        secondary2 = new ColorUIResource(colorTones.plus20());      
     }
 
     @Override
