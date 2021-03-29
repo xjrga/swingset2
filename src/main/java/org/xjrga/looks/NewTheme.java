@@ -54,7 +54,7 @@ public class NewTheme extends MetalTheme {
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines        
 
-        primary3 = new ColorUIResource(colorTones.plus50());
+        primary3 = new ColorUIResource(colorTones.plus60());
         //selected window, selected menuitem box,
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
