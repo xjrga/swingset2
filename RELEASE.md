@@ -9,4 +9,7 @@ RELEASE NOTES
 01 
     Add Khaki, Arch, Green, Bronze, Silver, Gold and Mars Theme
     Add new fonts
+02 
+    Add Monochrome Green and Monochrome Blue Theme
+    Add ColorMixer and ColorTone Generator
 
