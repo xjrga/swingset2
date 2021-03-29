@@ -30,6 +30,10 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+import javax.swing.plaf.metal.MetalTheme;
+import javax.swing.plaf.metal.OceanTheme;
+import javax.swing.plaf.metal.DefaultMetalTheme;
+import javax.swing.plaf.metal.MetalLookAndFeel;
 import org.xjrga.looks.Gold;
 import org.xjrga.looks.Khaki;
 import org.xjrga.looks.Bronze;
@@ -38,21 +42,16 @@ import org.xjrga.looks.Silver;
 import org.xjrga.looks.Mars;
 import org.xjrga.looks.Arch;
 import org.xjrga.looks.Pink;
+import org.xjrga.looks.MonochromeBlue;
+import org.xjrga.looks.MonochromeGreen;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.border.*;
-
-import javax.swing.plaf.metal.MetalTheme;
-import javax.swing.plaf.metal.OceanTheme;
-import javax.swing.plaf.metal.DefaultMetalTheme;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-
 import java.lang.reflect.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import org.xjrga.looks.MonochromeGreen;
-import org.xjrga.looks.MonochromePink;
+
 
 /**
  * A demo that shows all of the Swing components.
@@ -435,9 +434,9 @@ public class SwingSet2 extends JPanel {
 
             createThemesMenuItem(themesMenu, "ThemesMenu.monochromegreen_label", "ThemesMenu.monochromegreen_mnemonic",
                     "ThemesMenu.monochromegreen_accessible_description", new MonochromeGreen());
-            
-            createThemesMenuItem(themesMenu, "ThemesMenu.monochromepink_label", "ThemesMenu.monochromepink_mnemonic",
-                    "ThemesMenu.monochromepink_accessible_description", new MonochromePink());
+                        
+            createThemesMenuItem(themesMenu, "ThemesMenu.monochromeblue_label", "ThemesMenu.monochromeblue_mnemonic",
+                    "ThemesMenu.monochromeblue_accessible_description", new MonochromeBlue());
 
             // Enable theme menu based on L&F
             themesMenu.setEnabled("Metal".equals(currentLookAndFeel.name));
