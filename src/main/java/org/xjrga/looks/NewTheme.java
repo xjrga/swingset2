@@ -23,7 +23,7 @@ public class NewTheme extends MetalTheme {
     private ColorTones colorTones = null;
 
     public NewTheme() {
-        colorTones = new ColorTones(new Color(150, 150, 150));        
+        colorTones = new ColorTones(new Color(112, 173, 157));        
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
@@ -38,7 +38,7 @@ public class NewTheme extends MetalTheme {
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
         
-        secondary2 = new ColorUIResource(colorTones.plus10());
+        secondary2 = new ColorUIResource(colorTones.plus15());
         //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
         //slider disabled ticks, slider internal track, titled border outline,
