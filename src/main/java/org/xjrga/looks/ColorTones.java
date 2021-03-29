@@ -61,87 +61,87 @@ public class ColorTones {
         c100 = colorMixer.getColorTone(1.0f);
     }
 
-    public Color getOriginal() {
+    public Color plus0() {
         return c00;
     }
 
-    public Color get05() {
+    public Color plus5() {
         return c05;
     }
 
-    public Color get10() {
+    public Color plus10() {
         return c10;
     }
 
-    public Color get15() {
+    public Color plus15() {
         return c15;
     }
 
-    public Color get20() {
+    public Color plus20() {
         return c20;
     }
 
-    public Color get25() {
+    public Color plus25() {
         return c25;
     }
 
-    public Color get30() {
+    public Color plus30() {
         return c30;
     }
 
-    public Color get35() {
+    public Color plus35() {
         return c35;
     }
 
-    public Color get40() {
+    public Color plus40() {
         return c40;
     }
 
-    public Color get45() {
+    public Color plus45() {
         return c45;
     }
 
-    public Color get50() {
+    public Color plus50() {
         return c50;
     }
 
-    public Color get55() {
+    public Color plus55() {
         return c55;
     }
 
-    public Color get60() {
+    public Color plus60() {
         return c60;
     }
 
-    public Color get65() {
+    public Color plus65() {
         return c65;
     }
 
-    public Color get70() {
+    public Color plus70() {
         return c70;
     }
 
-    public Color get75() {
+    public Color plus75() {
         return c75;
     }
 
-    public Color get80() {
+    public Color plus80() {
         return c80;
     }
 
-    public Color get85() {
+    public Color plus85() {
         return c85;
     }
 
-    public Color get90() {
+    public Color plus90() {
         return c90;
     }
 
-    public Color get95() {
+    public Color plus95() {
         return c95;
     }
 
-    public Color get100() {
+    public Color plus100() {
         return c100;
     }    
 }
