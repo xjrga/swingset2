@@ -45,20 +45,20 @@ public class NewTheme extends MetalTheme {
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
                
-        primary1 = new ColorUIResource(colorTones.plus40());
+        primary1 = new ColorUIResource(colorTones.plus10());
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
 
-        secondary1 = new ColorUIResource(colorTones.plus10());
+        secondary1 = new ColorUIResource(colorTones.plus0());
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines        
 
-        primary3 = new ColorUIResource(colorTones.plus20());
-        //selected window, selected menuitem box, tree component
+        primary3 = new ColorUIResource(colorTones.plus50());
+        //selected window, selected menuitem box,
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
-        //folders, table row selection, selected tree item    
+        //table row selection, tree folders and selected tree item    
     }
 
     @Override
