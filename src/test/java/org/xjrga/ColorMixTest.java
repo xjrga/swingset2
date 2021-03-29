@@ -9,14 +9,14 @@ public class ColorMixTest {
 
     @Test
     public void testRgbValues() {
-        ColorMixer colorMixer = new ColorMixer(new Color(255, 0, 60), new Color(255, 255, 255));
-        Color newColor = colorMixer.getColorTone(0.3f);
+        ColorMixer colorMixer = new ColorMixer(new Color(0, 0, 0), new Color(255, 255, 255));
+        Color newColor = colorMixer.getColorTone(0.0f);
         StringBuilder sb = new StringBuilder();
         sb.append(newColor.getRed());
         sb.append(",");
         sb.append(newColor.getGreen());
         sb.append(",");
         sb.append(newColor.getBlue());
-        Assert.assertEquals("", sb.toString());
+        Assert.assertEquals("0,0,0", sb.toString());
     }
 }
