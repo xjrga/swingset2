@@ -31,20 +31,26 @@ public class ColorTest
     @Test
     public void testBrighterColor() {
         //5e850a -> 85bd0d
-        MyColor color = new MyColor(37,52,4);                
+        Color color = getColor(37,52,4,1);                
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 10; i++) {            
-            sb.append(color.brighter().getRed());
+        for (int i = 0; i < 10; i++) {   
+            System.out.println("i: "+i);
+            sb.append(getColor(37,52,4,0.7*i).getRed());
             sb.append(",");
-            sb.append(color.brighter().getGreen());
+            sb.append(getColor(37,52,4,0.7*1).getGreen());
             sb.append(",");
-            sb.append(color.brighter().getBlue());
+            sb.append(getColor(37,52,4,0.7*1).getBlue());
             sb.append("\n");            
         }
         System.out.println(sb.toString());
         
         //Assert.assertEquals(37, brighterColor.getRed());
-        Assert.assertFalse(true);        
-        
+        Assert.assertFalse(true);                
+    }
+    
+    public Color getColor(int r, int g, int b, double FACTOR){       
+        return new Color(Math.min((int) (r / FACTOR), 255),
+                Math.min((int) (g / FACTOR), 255),
+                Math.min((int) (b / FACTOR), 255));
     }
 }
