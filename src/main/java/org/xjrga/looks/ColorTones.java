@@ -61,7 +61,7 @@ public class ColorTones {
         c100 = colorMixer.getColorTone(1.0f);
     }
 
-    public Color get00() {
+    public Color getOriginal() {
         return c00;
     }
 

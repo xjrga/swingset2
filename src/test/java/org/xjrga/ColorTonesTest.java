@@ -13,11 +13,11 @@ public class ColorTonesTest {
         ColorTones colorTones = new ColorTones(new Color(0, 0, 0));
         StringBuilder sb = new StringBuilder();
         sb.append("c00:");
-        sb.append(colorTones.get00().getRed());
+        sb.append(colorTones.getOriginal().getRed());
         sb.append(",");
-        sb.append(colorTones.get00().getGreen());
+        sb.append(colorTones.getOriginal().getGreen());
         sb.append(",");
-        sb.append(colorTones.get00().getBlue());
+        sb.append(colorTones.getOriginal().getBlue());
         sb.append("\n");
         sb.append("c05:");
         sb.append(colorTones.get05().getRed());
