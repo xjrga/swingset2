@@ -2,6 +2,7 @@ package org.xjrga.looks;
 
 import java.awt.Color;
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
@@ -31,29 +32,29 @@ public class NewTheme extends MetalTheme {
         
         secondary3 = new ColorUIResource(colorTones.plus0());
         //app, menu background, selected tab
-
-        secondary2 = new ColorUIResource(colorTones.plus0());
+        
+        primary2 = new ColorUIResource(colorTones.plus50());//
+        //internal frame background, component focus
+        //menu item background, selected scrollbar knob background, folders line
+        //slider ticks, selected tree item outline
+        
+        secondary2 = new ColorUIResource(colorTones.plus10());
         //unselected tab, iframes side lines,scrollbar outline
         //slider outline and ticks,pressed menuitem,table grid, menubar outline
         //slider disabled ticks, slider internal track, titled border outline,
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
-
-        primary1 = new ColorUIResource(colorTones.plus20());
+               
+        primary1 = new ColorUIResource(colorTones.plus40());
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
 
-        secondary1 = new ColorUIResource(colorTones.plus30());
+        secondary1 = new ColorUIResource(colorTones.plus10());
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
-        //textbox outline, component outlines
+        //textbox outline, component outlines        
 
-        primary2 = new ColorUIResource(colorTones.plus40());//
-        //internal frame background, component focus
-        //menu item background, selected scrollbar knob background, folders line
-        //slider ticks, selected tree item outline
-
-        primary3 = new ColorUIResource(colorTones.plus50());
+        primary3 = new ColorUIResource(colorTones.plus20());
         //selected window, selected menuitem box, tree component
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
@@ -63,8 +64,8 @@ public class NewTheme extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        //UIManager.put("TabbedPane.selected", colorTones.get25());
-        //UIManager.put("TabbedPane.background", colorTones.get30());
+        UIManager.put("TabbedPane.selected", colorTones.plus0());
+        UIManager.put("TabbedPane.background", colorTones.plus0());
     }
 
     @Override
