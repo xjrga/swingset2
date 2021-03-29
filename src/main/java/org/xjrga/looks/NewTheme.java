@@ -23,7 +23,7 @@ public class NewTheme extends MetalTheme {
     private ColorTones colorTones = null;
 
     public NewTheme() {
-        colorTones = new ColorTones(new Color(173, 202, 216));        
+        colorTones = new ColorTones(new Color(179, 143, 88));        
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
@@ -54,7 +54,7 @@ public class NewTheme extends MetalTheme {
         //iframe outlines, button outlines, menu outline, menu item checkbox, 
         //textbox outline, component outlines        
 
-        primary3 = new ColorUIResource(colorTones.plus60());
+        primary3 = new ColorUIResource(colorTones.plus40());
         //selected window, selected menuitem box,
         //selected window top bar, scrollbar knob left outline, tooltip, 
         //selected list item, selected slider knob highlight,
@@ -64,8 +64,8 @@ public class NewTheme extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        UIManager.put("TabbedPane.selected", colorTones.plus10());
-        UIManager.put("TabbedPane.background", colorTones.plus0());
+        //UIManager.put("TabbedPane.selected", colorTones.plus10());
+        //UIManager.put("TabbedPane.background", colorTones.plus0());
     }
 
     @Override
