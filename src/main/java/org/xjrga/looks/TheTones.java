@@ -16,11 +16,13 @@ public class TheTones {
     private final double c;
     private final double m;
     private final double y;
+    private double[] rgb;
 
-    public TheTones(double c, double m, double y) {
-        this.c = c;
-        this.m = m;
-        this.y = y;
+    public TheTones(double cyan, double magenta, double yellow) {
+        this.c = cyan;
+        this.m = magenta;
+        this.y = yellow;
+        rgb = new double[3];
     }
 
     public Color get00() {
@@ -108,7 +110,44 @@ public class TheTones {
     }
 
     private Color getColorTone(double k) {
-        CMYKToRGB color = new CMYKToRGB(c, m, y, k);
-        return new Color(color.getRed(), color.getGreen(), color.getBlue());
+        rgb = this.getRgbValues(c, m, y, k);
+        return new Color((int) rgb[0], (int) rgb[1], (int) rgb[2]);
+    }
+
+    private double[] getRgbValues(double cyan, double magenta, double yellow, double black) {
+
+        double c;
+        double m;
+        double y;
+        double k;
+        double r;
+        double g;
+        double b;
+        double[] rgb = new double[3];
+
+        c = (double) cyan / 100.0;
+        m = (double) magenta / 100.0;
+        y = (double) yellow / 100.0;
+        k = (double) black / 100.0;
+
+        if (k < 1.0) {
+            c = c * (1.0 - k) + k;
+            m = m * (1.0 - k) + k;
+            y = y * (1.0 - k) + k;
+        } else {
+            c = 1.0;
+            m = 1.0;
+            y = 1.0;
+        }
+
+        r = 1.0 - c;
+        g = 1.0 - m;
+        b = 1.0 - y;
+
+        rgb[0] = Math.round(r * 100.0 * 10.0) / 10.0;
+        rgb[1] = Math.round(g * 100.0 * 10.0) / 10.0;
+        rgb[2] = Math.round(b * 100.0 * 10.0) / 10.0;
+
+        return rgb;
     }
 }
