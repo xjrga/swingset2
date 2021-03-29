@@ -3,7 +3,6 @@ package org.xjrga;
 import java.awt.Color;
 import junit.framework.Assert;
 import org.junit.Test;
-import org.xjrga.looks.ColorMixer;
 import org.xjrga.looks.ColorTones;
 
 public class ColorTonesTest {
