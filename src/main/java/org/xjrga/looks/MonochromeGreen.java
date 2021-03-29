@@ -11,7 +11,7 @@ import javax.swing.plaf.metal.MetalTheme;
  * NewTheme Theme 
  * @author Jorge R Garcia de Alba     
  */
-public class NewTheme extends MetalTheme {
+public class MonochromeGreen extends MetalTheme {
 
     private final FontUIResource font;
     private final ColorUIResource primary1;
@@ -22,43 +22,15 @@ public class NewTheme extends MetalTheme {
     private final ColorUIResource secondary3;   
     private ColorTones colorTones = null;
 
-    public NewTheme() {
+    public MonochromeGreen() {
         colorTones = new ColorTones(new Color(112, 173, 157));        
-        //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
-        //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
-        //font = new FontUIResource(TheFonts.getFreeMono(Float.valueOf(13)));        
-        //font = new FontUIResource(TheFonts.getUbuntuMono(Float.valueOf(13)));
-        
-        secondary3 = new ColorUIResource(colorTones.plus0());
-        //app, menu background, selected tab
-        
-        primary2 = new ColorUIResource(colorTones.plus35());//
-        //internal frame background, component focus
-        //menu item background, selected scrollbar knob background, folders line
-        //slider ticks, selected tree item outline
-        
-        secondary2 = new ColorUIResource(colorTones.plus15());
-        //unselected tab, iframes side lines,scrollbar outline
-        //slider outline and ticks,pressed menuitem,table grid, menubar outline
-        //slider disabled ticks, slider internal track, titled border outline,
-        //pressed button, selected toolbar button, filechooser file background,
-        //disabled text
-               
         primary1 = new ColorUIResource(colorTones.plus10());
-        //scrollbar knob outline and dots, folder tab, 
-        //selected iframe outline and dots, tooltip outline,
-        //slider knob dots
-
-        secondary1 = new ColorUIResource(colorTones.plus0());
-        //iframe outlines, button outlines, menu outline, menu item checkbox, 
-        //textbox outline, component outlines        
-
+        primary2 = new ColorUIResource(colorTones.plus35());
         primary3 = new ColorUIResource(colorTones.plus40());
-        //selected window, selected menuitem box,
-        //selected window top bar, scrollbar knob left outline, tooltip, 
-        //selected list item, selected slider knob highlight,
-        //table row selection, tree folders and selected tree item    
+        secondary3 = new ColorUIResource(colorTones.plus0());
+        secondary1 = new ColorUIResource(colorTones.plus0());
+        secondary2 = new ColorUIResource(colorTones.plus15());      
     }
 
     @Override
