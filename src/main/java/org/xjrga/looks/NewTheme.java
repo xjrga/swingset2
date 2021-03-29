@@ -33,7 +33,7 @@ public class NewTheme extends MetalTheme {
         secondary3 = new ColorUIResource(colorTones.plus0());
         //app, menu background, selected tab
         
-        primary2 = new ColorUIResource(colorTones.plus50());//
+        primary2 = new ColorUIResource(colorTones.plus35());//
         //internal frame background, component focus
         //menu item background, selected scrollbar knob background, folders line
         //slider ticks, selected tree item outline
