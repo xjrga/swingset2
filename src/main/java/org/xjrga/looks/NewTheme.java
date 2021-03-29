@@ -23,7 +23,7 @@ public class NewTheme extends MetalTheme {
     private ColorTones colorTones = null;
 
     public NewTheme() {
-        colorTones = new ColorTones(new Color(179, 143, 88));        
+        colorTones = new ColorTones(new Color(112, 173, 157));        
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
@@ -64,8 +64,10 @@ public class NewTheme extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        //UIManager.put("TabbedPane.selected", colorTones.plus10());
+        //UIManager.put("TabbedPane.selected", colorTones.plus5());
         //UIManager.put("TabbedPane.background", colorTones.plus0());
+        //If you enable this it will look a bit better but it affects 
+        //other themes
     }
 
     @Override
