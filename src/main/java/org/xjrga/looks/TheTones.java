@@ -147,6 +147,8 @@ public class TheTones {
         rgb[0] = Math.round(r * 100.0 * 10.0) / 10.0;
         rgb[1] = Math.round(g * 100.0 * 10.0) / 10.0;
         rgb[2] = Math.round(b * 100.0 * 10.0) / 10.0;
+        
+        System.out.println("rgb[]: "+rgb[0]+","+rgb[1]+","+rgb[2]);
 
         return rgb;
     }
