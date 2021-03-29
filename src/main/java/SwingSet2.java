@@ -52,6 +52,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import org.xjrga.looks.MonochromeGreen;
+import org.xjrga.looks.MonochromePink;
 
 /**
  * A demo that shows all of the Swing components.
@@ -434,6 +435,9 @@ public class SwingSet2 extends JPanel {
 
             createThemesMenuItem(themesMenu, "ThemesMenu.monochromegreen_label", "ThemesMenu.monochromegreen_mnemonic",
                     "ThemesMenu.monochromegreen_accessible_description", new MonochromeGreen());
+            
+            createThemesMenuItem(themesMenu, "ThemesMenu.monochromepink_label", "ThemesMenu.monochromepink_mnemonic",
+                    "ThemesMenu.monochromepink_accessible_description", new MonochromePink());
 
             // Enable theme menu based on L&F
             themesMenu.setEnabled("Metal".equals(currentLookAndFeel.name));

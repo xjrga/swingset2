@@ -11,7 +11,7 @@ import javax.swing.plaf.metal.MetalTheme;
  * NewTheme Theme 
  * @author Jorge R Garcia de Alba     
  */
-public class MonochromeGreen extends MetalTheme {
+public class MonochromePink extends MetalTheme {
 
     private final FontUIResource font;
     private final ColorUIResource primary1;
@@ -22,8 +22,8 @@ public class MonochromeGreen extends MetalTheme {
     private final ColorUIResource secondary3;   
     private ColorTones colorTones = null;
 
-    public MonochromeGreen() {
-        colorTones = new ColorTones(new Color(112, 173, 157));        
+    public MonochromePink() {
+        colorTones = new ColorTones(new Color(255, 158, 157));        
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
         primary1 = new ColorUIResource(colorTones.plus10());
         primary2 = new ColorUIResource(colorTones.plus35());
@@ -44,7 +44,7 @@ public class MonochromeGreen extends MetalTheme {
 
     @Override
     public String getName() {
-        return "Monochrome Green";
+        return "Monochrome Pink";
     }
 
     @Override
