@@ -26,7 +26,7 @@ public class NewTheme extends MetalTheme {
     private ColorTones colorTones = null;
 
     public NewTheme() {
-        colorTones = new ColorTones(new Color(0, 0, 0));        
+        colorTones = new ColorTones(new Color(127, 127, 127));        
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
@@ -43,7 +43,7 @@ public class NewTheme extends MetalTheme {
         //pressed button, selected toolbar button, filechooser file background,
         //disabled text
 
-        primary1 = new ColorUIResource(colorTones.get30());
+        primary1 = new ColorUIResource(colorTones.get10());
         //scrollbar knob outline and dots, folder tab, 
         //selected iframe outline and dots, tooltip outline,
         //slider knob dots
