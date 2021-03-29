@@ -34,7 +34,7 @@ public class ColorMixer {
         int r = (int) (srcR * (1.0f - mixValue) + mixR * mixValue);
         int g = (int) (srcG * (1.0f - mixValue) + mixG * mixValue);
         int b = (int) (srcB * (1.0f - mixValue) + mixB * mixValue);  
-        System.out.println("New Color: "+r+","+g+","+b);
+        //System.out.println("New Color: "+r+","+g+","+b);
         return new Color(r, g, b);
     }
 
