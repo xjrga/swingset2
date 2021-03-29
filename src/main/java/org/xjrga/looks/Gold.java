@@ -1,6 +1,5 @@
 package org.xjrga.looks;
 
-
 import java.awt.Color;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
@@ -31,7 +30,7 @@ public class Gold extends MetalTheme {
     private final Color COLOR80 = new Color(0x332a0d);
     private final Color COLOR90 = new Color(0x191507);
     private final Color COLOR100 = new Color(0x000000);
-    
+
     public Gold() {
         font = new FontUIResource(TheFonts.getLiberationMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.COLOR40);

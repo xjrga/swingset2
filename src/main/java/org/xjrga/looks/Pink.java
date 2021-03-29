@@ -1,6 +1,5 @@
 package org.xjrga.looks;
 
-
 import java.awt.Color;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
@@ -25,7 +24,7 @@ public class Pink extends MetalTheme {
     private final Color LIGHTBLUE = new Color(0xb6dada);
     private final Color MEDIUMBLUE = new Color(0x65c4ca);
     private final Color DARKBLUE = new Color(0x2b7bb8);
-    
+
     public Pink() {
         font = new FontUIResource(TheFonts.getUbuntuMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.PINK);

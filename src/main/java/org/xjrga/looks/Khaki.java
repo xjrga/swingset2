@@ -1,6 +1,5 @@
 package org.xjrga.looks;
 
-
 import java.awt.Color;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
@@ -26,7 +25,7 @@ public class Khaki extends MetalTheme {
     public final Color D = new Color(0x897846);
     public final Color E = new Color(0x9ba068);
     public final Color F = new Color(0xe0d5c1);
-    
+
     public Khaki() {
         font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.F);

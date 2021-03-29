@@ -1,6 +1,5 @@
 package org.xjrga.looks;
 
-
 import java.awt.Color;
 import javax.swing.UIDefaults;
 import javax.swing.plaf.ColorUIResource;
@@ -25,7 +24,7 @@ public class Arch extends MetalTheme {
     public final Color PURPLE = new Color(0x83534f);
     public final Color WHITE = new Color(0xf0f1eb);
     public final Color BLUE = new Color(0x8894ac);
-  
+
     public Arch() {
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
         secondary3 = new ColorUIResource(this.WHITE);

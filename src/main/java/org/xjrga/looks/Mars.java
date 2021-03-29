@@ -6,9 +6,13 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
+/*
+ * Mars Theme 
+ * @author Jorge R Garcia de Alba     
+ */
 public class Mars extends MetalTheme {
 
-    private final FontUIResource font;   
+    private final FontUIResource font;
     private final ColorUIResource primary1;
     private final ColorUIResource primary2;
     private final ColorUIResource primary3;
@@ -26,12 +30,8 @@ public class Mars extends MetalTheme {
     private final Color COLOR80 = new Color(0x331d13);
     private final Color COLOR90 = new Color(0x190e0a);
     private final Color COLOR100 = new Color(0x000000);
-
-    /*
-     * Mars Theme 
-     * @author Jorge R Garcia de Alba     
-     */
-    public Mars() {                       
+    
+    public Mars() {
         font = new FontUIResource(TheFonts.getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
@@ -68,7 +68,7 @@ public class Mars extends MetalTheme {
 
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
-        super.addCustomEntriesToTable(table);      
+        super.addCustomEntriesToTable(table);
     }
 
     @Override
