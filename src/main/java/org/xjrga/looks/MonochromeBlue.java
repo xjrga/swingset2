@@ -8,7 +8,7 @@ import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
 /*
- * NewTheme Theme 
+ * Monochrome Blue Theme 
  * @author Jorge R Garcia de Alba     
  */
 public class MonochromeBlue extends MetalTheme {

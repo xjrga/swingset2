@@ -6,6 +6,10 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalTheme;
 
+/*
+ * Mars Theme 
+ * @author Jorge R Garcia de Alba     
+ */
 public class Mars extends MetalTheme {
 
     private final FontUIResource font;
@@ -26,11 +30,7 @@ public class Mars extends MetalTheme {
     private final Color COLOR80 = new Color(0x331d13);
     private final Color COLOR90 = new Color(0x190e0a);
     private final Color COLOR100 = new Color(0x000000);
-
-    /*
-     * Mars Theme 
-     * @author Jorge R Garcia de Alba     
-     */
+    
     public Mars() {
         font = new FontUIResource(TheFonts.getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));

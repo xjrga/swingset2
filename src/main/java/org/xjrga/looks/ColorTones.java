@@ -7,9 +7,8 @@ package org.xjrga.looks;
 
 import java.awt.Color;
 
-/**
- *
- * @author jr
+/*
+ * @author Jorge R Garcia de Alba     
  */
 public class ColorTones {
 
