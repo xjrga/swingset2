@@ -23,7 +23,7 @@ public class NewTheme extends MetalTheme {
     private ColorTones colorTones = null;
 
     public NewTheme() {
-        colorTones = new ColorTones(new Color(112, 173, 157));        
+        colorTones = new ColorTones(new Color(255, 158, 157));        
         //font = new FontUIResource(TheFonts..getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
