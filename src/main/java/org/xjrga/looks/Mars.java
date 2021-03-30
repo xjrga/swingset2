@@ -30,7 +30,7 @@ public class Mars extends MetalTheme {
     private final Color COLOR80 = new Color(0x331d13);
     private final Color COLOR90 = new Color(0x190e0a);
     private final Color COLOR100 = new Color(0x000000);
-    
+
     public Mars() {
         font = new FontUIResource(TheFonts.getLiberationMono(Float.valueOf(13)));
         //font = new FontUIResource(TheFonts.getNotoMono(Float.valueOf(13)));

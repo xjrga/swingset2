@@ -19,18 +19,18 @@ public class MonochromeBlue extends MetalTheme {
     private final ColorUIResource primary3;
     private final ColorUIResource secondary1;
     private final ColorUIResource secondary2;
-    private final ColorUIResource secondary3;   
+    private final ColorUIResource secondary3;
     private ColorTones colorTones = null;
 
     public MonochromeBlue() {
-        colorTones = new ColorTones(new Color(173, 202, 216));        
+        colorTones = new ColorTones(new Color(173, 202, 216));
         font = new FontUIResource(TheFonts.getDejaVuSansMono(Float.valueOf(13)));
-        primary1 = new ColorUIResource(colorTones.plus10());
-        primary2 = new ColorUIResource(colorTones.plus30());
-        primary3 = new ColorUIResource(colorTones.plus40());
-        secondary3 = new ColorUIResource(colorTones.plus0());
-        secondary1 = new ColorUIResource(colorTones.plus0());
-        secondary2 = new ColorUIResource(colorTones.plus20());      
+        primary1 = new ColorUIResource(colorTones.lighterBy10());
+        primary2 = new ColorUIResource(colorTones.lighterBy30());
+        primary3 = new ColorUIResource(colorTones.lighterBy40());
+        secondary3 = new ColorUIResource(colorTones.getColor());
+        secondary1 = new ColorUIResource(colorTones.getColor());
+        secondary2 = new ColorUIResource(colorTones.lighterBy20());
     }
 
     @Override

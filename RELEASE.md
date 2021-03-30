@@ -14,4 +14,8 @@ RELEASE NOTES
 
     Add Monochrome Green and Monochrome Blue Theme
     Add ColorMixer and ColorTone Generator
+03 
+
+    Add Dawn Theme
+    
 

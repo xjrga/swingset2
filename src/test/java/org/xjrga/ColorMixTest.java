@@ -30,7 +30,7 @@ public class ColorMixTest {
             sb.append("\n");
         }
         Assert.assertEquals(
-                  "i:0,mixValue:0.0,(0,0,0)\n"
+                "i:0,mixValue:0.0,(0,0,0)\n"
                 + "i:1,mixValue:0.1,(25,25,25)\n"
                 + "i:2,mixValue:0.2,(51,51,51)\n"
                 + "i:3,mixValue:0.3,(76,76,76)\n"

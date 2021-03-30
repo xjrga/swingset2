@@ -51,7 +51,7 @@ import java.lang.reflect.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-
+import org.xjrga.looks.Dawn;
 
 /**
  * A demo that shows all of the Swing components.
@@ -434,9 +434,12 @@ public class SwingSet2 extends JPanel {
 
             createThemesMenuItem(themesMenu, "ThemesMenu.monochromegreen_label", "ThemesMenu.monochromegreen_mnemonic",
                     "ThemesMenu.monochromegreen_accessible_description", new MonochromeGreen());
-                        
+
             createThemesMenuItem(themesMenu, "ThemesMenu.monochromeblue_label", "ThemesMenu.monochromeblue_mnemonic",
                     "ThemesMenu.monochromeblue_accessible_description", new MonochromeBlue());
+
+            createThemesMenuItem(themesMenu, "ThemesMenu.dawn_label", "ThemesMenu.dawn_mnemonic",
+                    "ThemesMenu.dawn_dawn_description", new Dawn());
 
             // Enable theme menu based on L&F
             themesMenu.setEnabled("Metal".equals(currentLookAndFeel.name));
