@@ -67,15 +67,15 @@ public class Dawn extends MetalTheme {
     @Override
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);
-        //UIManager.put("TabbedPane.selected", colorTones.plus5());
-        //UIManager.put("TabbedPane.background", colorTones.plus0());
+        //UIManager.put("TabbedPane.selected", colorTone02.darkerBy10());
+        //UIManager.put("TabbedPane.background", colorTone01.getColor());
         //If you enable this it will look a bit better but it affects 
         //other themes
     }
 
     @Override
     public String getName() {
-        return "Monochrome Green";
+        return "Dawn";
     }
 
     @Override
