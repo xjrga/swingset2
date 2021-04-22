@@ -18,4 +18,7 @@ RELEASE NOTES
 
     Add Dawn Theme
     
+04 
+
+    Add Looks-01 library
 

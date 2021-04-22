@@ -3,12 +3,13 @@
     The Swing Set Demo
     
     To package:
-    mvn package
+    mvn clean package
     
     To run:
-    cp target/SwingSet2-03.jar ./
-    java -jar SwingSet2-03.jar
+    cd target
+    unzip SwingSet2-04-app.zip    
+    java -jar SwingSet2-04.jar
 
-    * Maven src directory must be in same directory as SwingSet2-03.jar for 
+    * Maven src directory must be in same directory as SwingSet2-04.jar for 
       program to see source code files and fonts.
     
