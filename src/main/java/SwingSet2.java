@@ -30,28 +30,34 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import javax.swing.plaf.metal.MetalTheme;
-import javax.swing.plaf.metal.OceanTheme;
-import javax.swing.plaf.metal.DefaultMetalTheme;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import org.xjrga.looks.Gold;
-import org.xjrga.looks.Khaki;
-import org.xjrga.looks.Bronze;
-import org.xjrga.looks.Green;
-import org.xjrga.looks.Silver;
-import org.xjrga.looks.Mars;
-import org.xjrga.looks.Arch;
-import org.xjrga.looks.Pink;
-import org.xjrga.looks.MonochromeBlue;
-import org.xjrga.looks.MonochromeGreen;
-import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.border.*;
-import java.lang.reflect.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.InputStream;
+import java.lang.reflect.*;
 import java.util.*;
-import org.xjrga.looks.Dawn;
+import javax.swing.*;
+import javax.swing.border.*;
+import javax.swing.event.*;
+import javax.swing.plaf.metal.DefaultMetalTheme;
+import javax.swing.plaf.metal.MetalLookAndFeel;
+import javax.swing.plaf.metal.MetalTheme;
+import javax.swing.plaf.metal.OceanTheme;
+import org.xjrga.looks.harmonic.TheFont;
+import org.xjrga.looks.roughdraft.Arch;
+import org.xjrga.looks.roughdraft.Bronze;
+import org.xjrga.looks.roughdraft.Gold;
+import org.xjrga.looks.roughdraft.Green;
+import org.xjrga.looks.roughdraft.Khaki;
+import org.xjrga.looks.roughdraft.Mars;
+import org.xjrga.looks.roughdraft.MonochromeBlue;
+import org.xjrga.looks.roughdraft.MonochromeGreen;
+import org.xjrga.looks.roughdraft.Pink;
+import org.xjrga.looks.roughdraft.Silver;
+import org.xjrga.looks.roughdraft.Theme;
+import org.xjrga.looks.themes.Dawn120;
+import org.xjrga.looks.themes.Dawn135;
+import org.xjrga.looks.themes.Dawn150;
+import org.xjrga.looks.themes.Dawn180;
 
 /**
  * A demo that shows all of the Swing components.
@@ -390,6 +396,28 @@ public class SwingSet2 extends JPanel {
                     "ThemesMenu.steel_accessible_description",
                     new DefaultMetalTheme());
 
+            //
+            InputStream fontStream = getClass().getResourceAsStream("/fonts/LiberationMono-Regular.ttf");
+            TheFont liberationMonoRegular = new TheFont();
+            liberationMonoRegular.setFontFileStream(fontStream);
+            liberationMonoRegular.setSize(13f);
+            Pink pink = new Pink(liberationMonoRegular.getFont());
+            Khaki khaki = new Khaki(liberationMonoRegular.getFont());
+            Arch arch = new Arch(liberationMonoRegular.getFont());
+            Green green = new Green(liberationMonoRegular.getFont());
+            Bronze bronze = new Bronze(liberationMonoRegular.getFont());
+            Silver silver = new Silver(liberationMonoRegular.getFont());
+            Gold gold = new Gold(liberationMonoRegular.getFont());
+            Mars mars = new Mars(liberationMonoRegular.getFont());
+            MonochromeGreen monochromeGreen = new MonochromeGreen(liberationMonoRegular.getFont());
+            MonochromeBlue monochromeBlue = new MonochromeBlue(liberationMonoRegular.getFont());
+            Dawn180 dawn180 = new Dawn180(liberationMonoRegular.getFont());
+            Dawn150 dawn150 = new Dawn150(liberationMonoRegular.getFont());
+            Dawn135 dawn135 = new Dawn135(liberationMonoRegular.getFont());
+            Dawn120 dawn120 = new Dawn120(liberationMonoRegular.getFont());
+            Theme theme = new Theme(liberationMonoRegular.getFont());
+            //
+
             createThemesMenuItem(themesMenu, "ThemesMenu.aqua_label", "ThemesMenu.aqua_mnemonic",
                     "ThemesMenu.aqua_accessible_description", new AquaTheme());
 
@@ -409,37 +437,34 @@ public class SwingSet2 extends JPanel {
                     "ThemesMenu.darkmetal_accessible_description", new DarkMetal());
 
             createThemesMenuItem(themesMenu, "ThemesMenu.pink_label", "ThemesMenu.pink_mnemonic",
-                    "ThemesMenu.pink_accessible_description", new Pink());
+                    "ThemesMenu.pink_accessible_description", pink);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.khaki_label", "ThemesMenu.khaki_mnemonic",
-                    "ThemesMenu.khaki_accessible_description", new Khaki());
+                    "ThemesMenu.khaki_accessible_description", khaki);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.arch_label", "ThemesMenu.arch_mnemonic",
-                    "ThemesMenu.arch_accessible_description", new Arch());
+                    "ThemesMenu.arch_accessible_description", arch);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.green_label", "ThemesMenu.green_mnemonic",
-                    "ThemesMenu.green_accessible_description", new Green());
+                    "ThemesMenu.green_accessible_description", green);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.bronze_label", "ThemesMenu.bronze_mnemonic",
-                    "ThemesMenu.bronze_accessible_description", new Bronze());
+                    "ThemesMenu.bronze_accessible_description", bronze);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.silver_label", "ThemesMenu.silver_mnemonic",
-                    "ThemesMenu.silver_accessible_description", new Silver());
+                    "ThemesMenu.silver_accessible_description", silver);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.gold_label", "ThemesMenu.gold_mnemonic",
-                    "ThemesMenu.gold_accessible_description", new Gold());
+                    "ThemesMenu.gold_accessible_description", gold);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.mars_label", "ThemesMenu.mars_mnemonic",
-                    "ThemesMenu.mars_accessible_description", new Mars());
+                    "ThemesMenu.mars_accessible_description", mars);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.monochromegreen_label", "ThemesMenu.monochromegreen_mnemonic",
-                    "ThemesMenu.monochromegreen_accessible_description", new MonochromeGreen());
+                    "ThemesMenu.monochromegreen_accessible_description", monochromeGreen);
 
             createThemesMenuItem(themesMenu, "ThemesMenu.monochromeblue_label", "ThemesMenu.monochromeblue_mnemonic",
-                    "ThemesMenu.monochromeblue_accessible_description", new MonochromeBlue());
-
-            createThemesMenuItem(themesMenu, "ThemesMenu.dawn_label", "ThemesMenu.dawn_mnemonic",
-                    "ThemesMenu.dawn_dawn_description", new Dawn());
+                    "ThemesMenu.monochromeblue_accessible_description", monochromeBlue);
 
             // Enable theme menu based on L&F
             themesMenu.setEnabled("Metal".equals(currentLookAndFeel.name));
