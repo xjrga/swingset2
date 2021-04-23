@@ -4,7 +4,7 @@
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.xjrga</groupId>
+    <groupId>io.github.xjrga</groupId>
     <artifactId>SwingSet2</artifactId>
     <version>04</version>
 
@@ -35,7 +35,7 @@
 	</dependency>
 
 	<dependency>
-	    <groupId>org.xjrga</groupId>
+	    <groupId>io.github.xjrga</groupId>
 	    <artifactId>looks</artifactId>
 	    <version>01</version>            
 	</dependency>      

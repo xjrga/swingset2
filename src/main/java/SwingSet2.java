@@ -42,22 +42,22 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 import javax.swing.plaf.metal.MetalTheme;
 import javax.swing.plaf.metal.OceanTheme;
-import org.xjrga.looks.harmonic.TheFont;
-import org.xjrga.looks.roughdraft.Arch;
-import org.xjrga.looks.roughdraft.Bronze;
-import org.xjrga.looks.roughdraft.Gold;
-import org.xjrga.looks.roughdraft.Green;
-import org.xjrga.looks.roughdraft.Khaki;
-import org.xjrga.looks.roughdraft.Mars;
-import org.xjrga.looks.roughdraft.MonochromeBlue;
-import org.xjrga.looks.roughdraft.MonochromeGreen;
-import org.xjrga.looks.roughdraft.Pink;
-import org.xjrga.looks.roughdraft.Silver;
-import org.xjrga.looks.roughdraft.Theme;
-import org.xjrga.looks.themes.Dawn120;
-import org.xjrga.looks.themes.Dawn135;
-import org.xjrga.looks.themes.Dawn150;
-import org.xjrga.looks.themes.Dawn180;
+import io.github.xjrga.looks.harmonic.TheFont;
+import io.github.xjrga.looks.roughdraft.Arch;
+import io.github.xjrga.looks.roughdraft.Bronze;
+import io.github.xjrga.looks.roughdraft.Gold;
+import io.github.xjrga.looks.roughdraft.Green;
+import io.github.xjrga.looks.roughdraft.Khaki;
+import io.github.xjrga.looks.roughdraft.Mars;
+import io.github.xjrga.looks.roughdraft.MonochromeBlue;
+import io.github.xjrga.looks.roughdraft.MonochromeGreen;
+import io.github.xjrga.looks.roughdraft.Pink;
+import io.github.xjrga.looks.roughdraft.Silver;
+import io.github.xjrga.looks.roughdraft.Theme;
+import io.github.xjrga.looks.themes.Dawn120;
+import io.github.xjrga.looks.themes.Dawn135;
+import io.github.xjrga.looks.themes.Dawn150;
+import io.github.xjrga.looks.themes.Dawn180;
 
 /**
  * A demo that shows all of the Swing components.
